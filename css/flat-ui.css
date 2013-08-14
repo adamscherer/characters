@@ -181,7 +181,7 @@ you can use the generic selector below, but it's slower:
   border-top-color: #34495e !important;
 }
 .demo-headline {
-  padding: 25px 0 75px;
+  padding: 25px 0 40px;
   text-align: center;
 }
 .demo-logo {
@@ -3667,10 +3667,10 @@ body.vjs-full-window {
 #data-result h3 {
   color: #2980B9;
   font-size: 100px;
-  margin: 55px 0 34px;
+  margin: 40px 0 34px;
 }
 .adscontainer {
-  margin-top: 16px;
+  margin-top: 31px;
 }
 .login-link {
   color: #bfc9ca;
