@@ -6,7 +6,7 @@
     var result = $('#data-result');
     var resultElement = result.find('h3');
 
-    var numberWithCommas : function(x) {
+    var numberWithCommas = function(x) {
       return (x || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
