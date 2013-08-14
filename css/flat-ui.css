@@ -181,7 +181,7 @@ you can use the generic selector below, but it's slower:
   border-top-color: #34495e !important;
 }
 .demo-headline {
-  padding: 73px 0 110px;
+  padding: 25px 0 75px;
   text-align: center;
 }
 .demo-logo {
@@ -3577,12 +3577,12 @@ body.vjs-full-window {
 .login-screen {
   background-color: #1abc9c;
   min-height: 317px;
-  padding: 123px 199px 33px 306px;
+  padding: 40px 50px 33px 207px;
 }
 .login-icon {
-  left: 200px;
+  left: 100px;
   position: absolute;
-  top: 160px;
+  top: 75px;
   width: 96px;
 }
 .login-icon > img {
@@ -3594,6 +3594,7 @@ body.vjs-full-window {
   font-size: 17px;
   font-weight: 200;
   line-height: 34px;
+  text-align: center;
   opacity: 0.95;
   filter: alpha(opacity=95);
 }
@@ -3610,6 +3611,7 @@ body.vjs-full-window {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+  height: 356px;
 }
 .login-form:before {
   content: '';
@@ -3650,6 +3652,25 @@ body.vjs-full-window {
   -o-transition: 0.25s;
   transition: 0.25s;
   -webkit-backface-visibility: hidden;
+}
+.login-form textarea {
+  width: 535px;
+  height: 270px;
+}
+#data-result h1, #data-result h3 {
+  text-align: center;
+}
+#data-result h1 {
+  color: #34495e;
+  font-size: 48px;
+}
+#data-result h3 {
+  color: #2980B9;
+  font-size: 100px;
+  margin: 55px 0 34px;
+}
+.adscontainer {
+  margin-top: 16px;
 }
 .login-link {
   color: #bfc9ca;
