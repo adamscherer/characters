@@ -22,7 +22,7 @@
     <div class="container">
       <div class="demo-headline">
         <h1 class="demo-logo">
-          Count My Characters
+          Count My Characters (and words!)
           <small>Another Free Web Tool</small>
         </h1>
       </div> <!-- /demo-headline -->
@@ -42,12 +42,21 @@
               <a class="btn btn-primary btn-large btn-block" href="#count">Count</a>
             </div>
             <div id="data-result" style="display:none">
-              <h1>Total Characters</h1>
-              <h3></h3>
+              <div class="row-fluid">
+                <div class="span6">
+                  <h1>Characters</h1>
+                  <h3 id="total-characters"></h3>
+                </div>
+                <div class="span6">
+                  <h1>Words</h1>
+                  <h3 id="total-words"></h3>
+                </div>
+              </div>
+
               <a class="login-link" href="#">Count some more?</a>
               <div class="adscontainer">
                 <div class="row-fluid">
-                  <div class="span4">
+                  <div class="span2">
 
                   </div>
                   <div class="span4">
@@ -75,6 +84,9 @@
                     <script type="text/javascript"
                     src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                     </script>
+                  </div>
+                  <div class="span2">
+
                   </div>
                 </div>
               </div>

@@ -4,7 +4,8 @@
   
     var input = $('#data-input');
     var result = $('#data-result');
-    var resultElement = result.find('h3');
+    var charactersElement = $('#total-characters');
+    var wordsElement = $('#total-words');
 
     var numberWithCommas = function(x) {
       return (x || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -16,7 +17,9 @@
     // Disable link clicks to prevent page scrolling
     $('a[href="#count"]').on('click', function (e) {
       e.preventDefault();
-      resultElement.text(numberWithCommas($("textarea").val().length));
+      var text = $("textarea").val() || '';
+      charactersElement.text(numberWithCommas(text.length));
+      wordsElement.text(numberWithCommas(text.match(/\S+/g).length));
       input.hide();
       result.show();
     });
