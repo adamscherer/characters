@@ -14,7 +14,7 @@
 
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
-
+    <link href="css/app.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -23,7 +23,32 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
+    <header>
+      <div class="container">
+        <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+              <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-01"></button>
+                <div class="nav-collapse collapse" id="nav-collapse-01">
+                  <ul class="nav">
+                    <li class="active">
+                      <a href="/">
+                        Character Counter
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/mortgage">
+                        Mortgage Calculator
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </header>
+    <div class="main container">
       <div class="demo-headline">
         <h1 class="demo-logo">
           Count My Characters (and words!)
@@ -103,43 +128,31 @@
 
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="span7">
-            <div style="padding: 20px">
-              <script type="text/javascript"><!--
-              google_ad_client = "ca-pub-5071928133115505";
-              /* Footer Rectangle */
-              google_ad_slot = "1383592270";
-              google_ad_width = 336;
-              google_ad_height = 280;
-              //-->
-              </script>
-              <script type="text/javascript"
-              src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-              </script>
-            </div>
-          </div> <!-- /span8 -->
-
-          <div class="span5">
-            <div class="footer-banner">
-              <h3 class="footer-title">Like what you see?</h3>
-              <ul>
-                <li>Maybe try out our <a href="/mortgage">Mortgage Calculator</a></li>
-                <li>Check back in the near future for more simple tools</li>
-                <li>Simple is our motto</li>
-                <li>Professional and secure</li>
-              </ul>
-            </div>
-          </div>
+        <div class="ad-row">
+          <script type="text/javascript"><!--
+          google_ad_client = "ca-pub-5071928133115505";
+          /* Footer Ad */
+          google_ad_slot = "1128070273";
+          google_ad_width = 728;
+          google_ad_height = 90;
+          //-->
+          </script>
+          <script type="text/javascript"
+          src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
         </div>
       </div>
+      <div class="container">
+        <address>
+          <b>Umpteenth Tool Group</b> | 475 River Bend Rd. | Suite 307 | Naperville | IL | 60540
+        </address>
+      </div>
     </footer>
-    
+
     <!-- Load JS here for greater good =============================-->
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/jquery.placeholder.js"></script>
     <script src="js/application.js"></script>
-
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -886,7 +886,7 @@ h6 {
   text-decoration: none;
 }
 .navbar .nav ul a:hover {
-  background-color: #1abc9c;
+  background-color: #16A085;
 }
 .navbar .btn-navbar {
   background: none;
@@ -901,7 +901,7 @@ h6 {
 .navbar .btn-navbar:hover,
 .navbar .btn-navbar:focus {
   background: none;
-  color: #1abc9c;
+  color: #BDC3C7;
 }
 .navbar .btn-navbar:before {
   content: "\e00c";

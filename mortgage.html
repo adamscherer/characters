@@ -14,58 +14,41 @@
 
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
-
+    <link href="css/app.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
     <![endif]-->
-
-    <style>
-      #total-input {
-        font-size: 15px;
-        height: 22px;
-      }
-      .btn-clickable a {
-        margin-bottom: 5px;
-      }
-      .btn-clickable a.active {
-        color: #1abc9c;
-      }
-      .interest a {
-        width: 51px;
-      }
-      .loan-length a {
-        width: 64px;
-        height: 46px;
-      }
-      .loan-length a.custom {
-        height: auto;
-        width: 51px;
-      }
-      .loan-length a span{
-        font-size: 75%;
-        color: #798795;
-      }
-      .loan-length a.active span{
-        color: #1abc9c;
-      }
-      .ads-container {
-        margin: 25px 0 0 60px;
-      }
-      #custom-interest {
-        width: 153px;
-        margin-top: 5px;
-      }
-      #custom-loan-length {
-        width: 102px;
-        margin-top: 5px;
-      }
-    </style>
   </head>
   <body>
-    <div class="container">
+    <header>
+      <div class="container">
+        <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+              <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-01"></button>
+                <div class="nav-collapse collapse" id="nav-collapse-01">
+                  <ul class="nav">
+                    <li>
+                      <a href="/">
+                        Character Counter
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="/mortgage">
+                        Mortgage Calculator
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </header>
+    <div class="main container">
       <div class="row">
         <div class="span3">
 
@@ -140,38 +123,27 @@
 
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="span7">
-            <div style="padding: 20px">
-              <script type="text/javascript"><!--
-              google_ad_client = "ca-pub-5071928133115505";
-              /* Footer Rectangle */
-              google_ad_slot = "1383592270";
-              google_ad_width = 336;
-              google_ad_height = 280;
-              //-->
-              </script>
-              <script type="text/javascript"
-              src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-              </script>
-            </div>
-          </div> <!-- /span8 -->
-
-          <div class="span5">
-            <div class="footer-banner">
-              <h3 class="footer-title">Like what you see?</h3>
-              <ul>
-                <li>Check back in the near future for more simple tools</li>
-                <li>A wide variety of technologies</li>
-                <li>Simple is our motto</li>
-                <li>Professional and secure</li>
-              </ul>
-            </div>
-          </div>
+        <div class="ad-row">
+          <script type="text/javascript"><!--
+          google_ad_client = "ca-pub-5071928133115505";
+          /* Footer Ad */
+          google_ad_slot = "1128070273";
+          google_ad_width = 728;
+          google_ad_height = 90;
+          //-->
+          </script>
+          <script type="text/javascript"
+          src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
         </div>
       </div>
+      <div class="container">
+        <address>
+          Umpteenth Tool Group | 475 River Bend Rd. | Suite 307 | Naperville | IL | 60540
+        </address>
+      </div>
     </footer>
-    
+
     <!-- Load JS here for greater good =============================-->
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/jquery.placeholder.js"></script>
