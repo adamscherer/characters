@@ -83,3 +83,43 @@ footer address {
   text-align: center;
   padding: 30px;
 }
+.demo-logo {
+  font-size: 65px;
+  margin: 5px 0;
+}
+.demo-headline {
+  padding: 10px 0 20px;
+}
+
+.login-screen {
+  background-color: #3498DB;
+  min-height: 317px;
+  padding: 40px 50px 33px 50px;
+}
+
+.login-form {
+  background-color: #edeff1;
+  padding: 24px 23px 20px;
+  position: relative;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  height: 356px;
+}
+
+.login-form:before {
+  border: none;
+}
+
+.login-form textarea {
+  width: 691px;
+  height: 285px;
+}
+
+.adscontainer {
+  margin-top: 70px;
+}
+
+textarea:focus {
+  border-color: #2980B9;
+}
