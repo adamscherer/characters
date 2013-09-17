@@ -9,13 +9,11 @@ module.exports = function(grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*!\n' +
-              '* Bootstrap v<%= pkg.version %> by @fat and @mdo\n' +
+              '* Web Calculators v<%= pkg.version %> by Umpteen Group\n' +
               '* Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
               '* Licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
-              '*\n' +
-              '* Designed and built with all the love in the world by @mdo and @fat.\n' +
               '*/\n',
-    jqueryCheck: 'if (!jQuery) { throw new Error(\"Bootstrap requires jQuery\") }\n\n',
+    jqueryCheck: 'if (!jQuery) { throw new Error(\"Web Calculators requires jQuery\") }\n\n',
 
     // Task configuration.
     clean: {
@@ -46,7 +44,8 @@ module.exports = function(grunt) {
         src: [
           'js/health-calcuator.js',
           'js/brewing-calcuator.js',
-          'js/publishing-calcuator.js'
+          'js/publishing-calcuator.js',
+          'js/application.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
@@ -67,35 +66,16 @@ module.exports = function(grunt) {
         compile: true,
         banner: '<%= banner %>'
       },
-      bootstrap: {
-        src: ['less/bootstrap.less'],
-        dest: 'dist/css/<%= pkg.name %>.css'
+      application: {
+        src: ['less/app.less'],
+        dest: 'css/app.css'
       },
       min: {
         options: {
           compress: true
         },
-        src: ['less/bootstrap.less'],
-        dest: 'dist/css/<%= pkg.name %>.min.css'
-      },
-      theme: {
-        src: ['less/theme.less'],
-        dest: 'dist/css/<%= pkg.name %>-theme.css'
-      },
-      theme_min: {
-        options: {
-          compress: true
-        },
-        src: ['less/theme.less'],
-        dest: 'dist/css/<%= pkg.name %>-theme.min.css'
-      }
-    },
-
-    copy: {
-      fonts: {
-        expand: true,
-        src: ["fonts/*"],
-        dest: 'dist/'
+        src: ['less/app.less'],
+        dest: 'css/app.min.css'
       }
     },
 
@@ -116,7 +96,11 @@ module.exports = function(grunt) {
     },
 
     jekyll: {
-      docs: {}
+      dist: {
+        options: {
+
+        }
+      }
     },
 
     validation: {
@@ -124,7 +108,7 @@ module.exports = function(grunt) {
         reset: true
       },
       files: {
-        src: ["_gh_pages/**/*.html"]
+        src: ["_site/**/*.html"]
       }
     },
 
@@ -138,8 +122,12 @@ module.exports = function(grunt) {
         tasks: ['jshint:test', 'qunit']
       },
       recess: {
-        files: 'less/*.less',
+        files: 'less/app.less',
         tasks: ['recess']
+      },
+      html: {
+        files: '*.html',
+        tasks: ['jekyll']
       }
     }
   });
@@ -164,12 +152,9 @@ module.exports = function(grunt) {
 
   // Test task.
   var testSubtasks = ['dist-css', 'jshint', 'qunit', 'validate-html'];
-  // Only run BrowserStack tests under Travis
-  if (process.env.TRAVIS) {
-    // Only run BrowserStack tests if this is a mainline commit in twbs/bootstrap, or you have your own BrowserStack key
-    if ((process.env.TRAVIS_REPO_SLUG === 'twbs/bootstrap' && process.env.TRAVIS_PULL_REQUEST === 'false') || process.env.TWBS_HAVE_OWN_BROWSERSTACK_KEY) {
-      testSubtasks.push('browserstack_runner');
-    }
+  // Only run if there is a BrowserStack key
+  if (process.env.BROWSERSTACK_KEY) {
+    testSubtasks.push('browserstack_runner');
   }
   grunt.registerTask('test', testSubtasks);
 
@@ -179,33 +164,10 @@ module.exports = function(grunt) {
   // CSS distribution task.
   grunt.registerTask('dist-css', ['recess']);
 
-  // Fonts distribution task.
-  grunt.registerTask('dist-fonts', ['copy']);
-
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-fonts', 'dist-js']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js']);
 
   // Default task.
-  grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
+  grunt.registerTask('default', ['test', 'dist']);
 
-  // task for building customizer
-  grunt.registerTask('build-customizer', 'Add scripts/less files to customizer.', function () {
-    var fs = require('fs')
-
-    function getFiles(type) {
-      var files = {}
-      fs.readdirSync(type)
-        .filter(function (path) {
-          return type == 'fonts' ? true : new RegExp('\\.' + type + '$').test(path)
-        })
-        .forEach(function (path) {
-          return files[path] = fs.readFileSync(type + '/' + path, 'utf8')
-        })
-      return 'var __' + type + ' = ' + JSON.stringify(files) + '\n'
-    }
-
-    var customize = fs.readFileSync('customize.html', 'utf-8')
-    var files = getFiles('js') + getFiles('less') + getFiles('fonts')
-    fs.writeFileSync('assets/js/raw-files.js', files)
-  });
 };
