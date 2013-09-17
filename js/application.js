@@ -77,7 +77,7 @@
         var total = parseInt(total_input.val().replace(/\D/g,''), 10);
         var i = parseFloat(getInterest());
         var n = parseInt(getLoanLength(), 10) * -1;
-        var total = ((i / 100 / 12) * total) / (1 - Math.pow((1 + (i / 100 / 12)), n));
+        total = ((i / 100 / 12) * total) / (1 - Math.pow((1 + (i / 100 / 12)), n));
         if (isNaN(total)) {
           defaultTotal();
         } else {
