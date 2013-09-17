@@ -1,0 +1,19 @@
+# Dependencies
+markdown:         rdiscount
+pygments:         true
+
+# Server
+destination:      ./_site
+exclude:          [".editorconfig", ".gitignore", ".ruby-version", "tests", "CNAME", "LICENSE", "Gruntfile.js", "package.json", "node_modules", "README.md", "less"]
+port:             9001
+
+# Custom vars
+current_version:  1.0.0
+repo:             https://github.com/adamscherer/characters
+
+download_source:  https://github.com/adamscherer/characters/archive/v1.0.0.zip
+download_dist:    https://github.com/adamscherer/characters/releases/download/v1.0.0/bootstrap-1.0.0-dist.zip
+
+cdn_css:          //netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css
+cdn_theme_css:    //netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css
+cdn_js:           //netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js
