@@ -4,50 +4,57 @@ title: BMI Calculator
 lead: "Our BMI calculator is simple and accurate."
 ---
 
-<div class="main container">
+<div class="main container bmi">
   <div class="row">
-    <div class="span3">
-
-    </div>
-    <div class="span6">
-      <h3 class="demo-panel-title">1. Height</h3>
-      <div class="control-group ">
-        <input id="total-input" type="text" value="" placeholder="Enter loan amount..." class="span6">
-        <i class="input-icon fui-check-inverted"></i>
-      </div>
+    <div class="span9">
       <div class="row-fluid">
-        <div class="span12">
-          <h3 class="demo-panel-title">2. Weight</h3>
-          <div class="btn-clickable interest">
-            <a class="btn btn-inverse" href="#" data-interest="3.50">3.50%</a>
-            <a class="btn btn-inverse" href="#" data-interest="3.75">3.75%</a>
-            <a class="btn btn-inverse active" href="#" data-interest="4.00">4.00%</a>
-            <a class="btn btn-inverse" href="#" data-interest="4.25">4.25%</a>
-            <a class="btn btn-inverse" href="#" data-interest="4.50">4.50%</a>
-            <a class="btn btn-inverse" href="#" data-interest="4.75">4.75%</a>
-            <a class="btn btn-inverse" href="#" data-interest="5.00">5.00%</a>
-            <a class="btn btn-inverse" href="#" data-interest="5.25">5.25%</a>
-            <a class="btn btn-inverse" href="#" data-interest="5.50">5.50%</a>
-            <a class="btn btn-inverse" href="#" data-interest="5.75">5.75%</a>
-            <a class="btn btn-inverse" href="#" data-interest="6.00">6.00%</a>
-            <a class="btn btn-inverse" href="#" data-interest="6.25">6.25%</a>
-            <a class="btn btn-inverse" href="#" data-interest="6.50">6.50%</a>
-            <a class="btn btn-inverse" href="#" data-interest="6.75">6.75%</a>
-            <a class="btn btn-inverse" href="#" data-interest="7.00">7.00%</a>
-            <a class="btn btn-inverse custom" href="#" data-interest="custom">Custom</a>
-            <input id="custom-interest" type="text" value="" placeholder="Interest..." disabled="disabled" class="span1">
+        <div class="span6">
+          <h3 class="demo-panel-title">1. Weight</h3>
+          <div>
+            <input id="total-input" type="text" value="" placeholder="Enter weight in pounds..." class="form-control" />
+          </div>
+
+          <h3 class="demo-panel-title">2. Feet</h3>
+          <div>
+            <select name="feet" class="select-block">
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </div>
+
+          <h3 class="demo-panel-title">3. Inches</h3>
+          <div>
+            <select name="inches" class="select-block">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+            </select>
           </div>
         </div>
+        <div class="span6">
+          <div class="demo-headline">
+            <h1 class="demo-logo">
+              <span id="bmi"></span>
+              <small>BMI</small>
+            </h1>
+          </div> 
+        </div>
       </div>
-      <div class="demo-headline">
-        <h1 class="demo-logo">
-          $<span id="monthly-amount"></span>
-          <small>Monthly Payment</small>
-        </h1>
-      </div> 
     </div> 
     <div class="span3">
       {% include side-ads.html %}
     </div>
   </div>
-</div> 
+</div>

@@ -42,9 +42,10 @@ module.exports = function(grunt) {
       },
       calculations: {
         src: [
-          'js/health-calcuator.js',
-          'js/brewing-calcuator.js',
-          'js/publishing-calcuator.js',
+          'js/health-calculator.js',
+          'js/brewing-calculator.js',
+          'js/publishing-calculator.js',
+          'js/finance-calculator.js',
           'js/application.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
@@ -115,7 +116,7 @@ module.exports = function(grunt) {
     watch: {
       src: {
         files: '<%= jshint.src.src %>',
-        tasks: ['jshint:src', 'qunit']
+        tasks: ['jshint:src', 'qunit', 'dist', 'jekyll']
       },
       test: {
         files: '<%= jshint.test.src %>',
@@ -123,11 +124,11 @@ module.exports = function(grunt) {
       },
       recess: {
         files: 'less/app.less',
-        tasks: ['recess']
+        tasks: ['recess', 'dist', 'jekyll']
       },
       html: {
-        files: '*.html',
-        tasks: ['jekyll']
+        files: ['*.html', '_layouts/*.html', '_includes/*.html'],
+        tasks: ['dist', 'jekyll']
       }
     }
   });
@@ -151,7 +152,7 @@ module.exports = function(grunt) {
   grunt.registerTask('validate-html', ['jekyll', 'validation']);
 
   // Test task.
-  var testSubtasks = ['dist-css', 'jshint', 'qunit', 'validate-html'];
+  var testSubtasks = ['dist-css', 'jshint', 'qunit'];
   // Only run if there is a BrowserStack key
   if (process.env.BROWSERSTACK_KEY) {
     testSubtasks.push('browserstack_runner');
@@ -168,6 +169,6 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js']);
 
   // Default task.
-  grunt.registerTask('default', ['test', 'dist']);
+  grunt.registerTask('default', ['test', 'dist', 'validate-html']);
 
 };
