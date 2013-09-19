@@ -44,7 +44,7 @@
         > a:hover,
         > a:focus {
           background: none;
-          color: @firm;
+          color: @navbar-active-hover;
           .box-shadow(none);
         }
       }
@@ -74,14 +74,14 @@
       // First level link
       > a {
         color: mix(@base, white, 85%);
-        font-weight: 700;
-        font-size: @base-font-size * 1.071; /* 15px */
+        font-weight: 400;
+        font-size: 16px;
         padding: 29px @navbar-link-space 27px;
         text-shadow: none;
         .transition(~"background-color .25s, color .25s, border-bottom-color .25s");
 
         &:hover, &:focus {
-          color: @firm;
+          color: @base;
         }
         &[class*="fui-"] {
           font-size: 24px;
@@ -103,7 +103,7 @@
     
     > li:first-child {        
       > a {
-        .border-radius(0 0 0 6px);
+        .border-radius(0 0 0 0);
       }
     }
 
@@ -218,7 +218,7 @@
 // Alternate Color
 // --------------------------------------------------
 .navbar-inverse {
-  font-size: @base-font-size * 1.214; /* 17px */
+  font-size: 17px;
 
   .navbar-inner {
     background: @base;
@@ -235,6 +235,9 @@
     margin: 7px 10px;
   }
   .nav {
+    border-left: 1px solid rgba(255, 255, 255, 0.11);
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.1);
+
     > li {
       &:first-child {
         &.active {
@@ -243,7 +246,7 @@
           }
         }
         > a {
-          border-left: none;
+
         }
       }
 
@@ -253,15 +256,12 @@
           &, &:hover, &:focus {
             background-color: @firm;
             border-bottom-color: mix(@firm, black, 85%);
-            border-left: none;
-            color: @inverse;
-            padding-left: @navbar-link-space + 2;
+            color: white;
             .box-shadow(none);
           }
         }
         & + li {
           > a {
-            border-left: none;
             padding-left: @navbar-link-space + 2;
           }
         }
@@ -271,9 +271,17 @@
       > a {
         font-size: @base-font-size * 1.143; /* 16px */
         border-bottom: 2px solid mix(@base, black, 85%);
-        border-left: 2px solid mix(@base, black, 85%);
-        color: @inverse;        
+        color: white;        
         padding: 16px @navbar-link-space 15px;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 0 0 rgba(255, 255, 255, 0.11);
+
+        &:hover, &:focus {
+          background-color: @firm;
+          border-bottom-color: mix(@firm, black, 85%);
+          color: white;
+          .box-shadow(none);
+        }
       }
     }
   }
@@ -281,7 +289,7 @@
   // Round corders of the pull-right dropdown
   .nav.pull-right > li {
     > a {
-      border-radius: 0 6px 6px 0;
+      border-radius: 0 0 0 0;
     }
   }
 }

@@ -68,14 +68,14 @@ module.exports = function(grunt) {
         banner: '<%= banner %>'
       },
       application: {
-        src: ['less/app.less'],
+        src: ['less/flat-ui.less'],
         dest: 'css/app.css'
       },
       min: {
         options: {
           compress: true
         },
-        src: ['less/app.less'],
+        src: ['less/flat-ui.less'],
         dest: 'css/app.min.css'
       }
     },
@@ -123,7 +123,7 @@ module.exports = function(grunt) {
         tasks: ['jshint:test', 'qunit']
       },
       recess: {
-        files: 'less/app.less',
+        files: 'less/*.less',
         tasks: ['recess', 'dist', 'jekyll']
       },
       html: {
