@@ -925,21 +925,7 @@ h6 {
 }
 
 .navbar .nav > li > ul {
-  top: 80%;
-  padding-top: 13px;
-}
-
-.navbar .nav > li > ul:before {
-  position: absolute;
-  top: 5px;
-  left: 15px;
-  width: 0;
-  height: 0;
-  border-color: transparent transparent #34495e transparent;
-  border-style: solid;
-  border-width: 0 9px 9px 9px;
-  content: "";
-  -webkit-transform: rotate(360deg);
+  top: 100%;
 }
 
 .navbar .nav > li > ul li:hover ul {
@@ -1049,7 +1035,7 @@ h6 {
 
 .navbar .nav ul a {
   display: block;
-  padding: 6px 9px;
+  padding: 12px 9px;
   font-size: 14px;
   color: #ffffff;
   text-decoration: none;

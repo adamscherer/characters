@@ -25,9 +25,14 @@
   <body>
     <header class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container">
+        <div class="container nav-collapse collapse navbar-responsive-collapse">
           <ul class="nav">
-            <li {% if page.active == 'publish' %}class="active"{% endif %}><a href="/">Character Counter</a></li>
+            <li class="dropdown {% if page.active == 'publish' %}active{% endif %}">
+              <a href="/" data-toggle="dropdown">Character Counter</a>
+              <ul>
+                <li><a href="/">Character Counter</a></li>
+              </ul>
+            </li>
             <li {% if page.active == 'finance' %}class="active"{% endif %}><a href="/mortgage">Mortgage Calculator</a></li>
             <li {% if page.active == 'health' %}class="active"{% endif %}><a href="/bmi">BMI Calculator</a></li>
           </ul>
