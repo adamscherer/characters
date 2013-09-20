@@ -112,6 +112,12 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
     return !isNaN(parseFloat(n)) && isFinite(n);
   }
 
+  var p_int = function(num) {
+      var n = parseInt(num, 10);
+
+      return isNaN(n) ? 0 : n;
+  };
+
   // All applications
   $(function() {
     // Placeholders for input/textarea
@@ -248,7 +254,21 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
     inches_container.selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
 
     function calculate() {
-      bmi_field.text(HealthCalculator.calculateBmi(weight_input.val(), HealthCalculator.calculateHeightInInches(feet_container.val(), inches_container.val())));
+      var bmi = HealthCalculator.calculateBmi(weight_input.val(), HealthCalculator.calculateHeightInInches(feet_container.val(), inches_container.val()));
+      bmi_field.text(bmi);
+
+      bmi_field.removeClass();
+      var value = parseFloat(bmi);
+      if (value === 0) {
+        return;
+      }
+
+      if (value > 30 || value < 18.5) {
+        bmi_field.addClass('obese');
+      } else {
+        bmi_field.addClass('normal');
+      }
+      
     }
 
     weight_input.on('keypress', function(e) {
