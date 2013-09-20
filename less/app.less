@@ -14,12 +14,24 @@ header {
 .calculator-heading {
   color: mix(@firm, black, 85%);
 }
-        
-#total-input {
-  height: 22px;
-  font-size: 15px;
+
+.result-box {
+  margin-top: 20px;
 }
- 
+
+.button-box {
+  padding: 30px 0;
+}
+        
+#total-input, .form-control {
+  height: 22px !important;
+  font-size: 15px !important;
+}
+
+h3.form-label {
+  font-size: 20px;
+}
+
 .btn-clickable a {
   margin-bottom: 5px;
 }
@@ -84,31 +96,6 @@ footer address {
   padding: 10px 0 20px;
 }
 
-.login-screen {
-  min-height: 317px;
-  padding: 40px 50px 33px 50px;
-  background-color: #3498DB;
-}
-
-.login-form {
-  position: relative;
-  height: 356px;
-  padding: 24px 23px 20px;
-  background-color: #edeff1;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-
-.login-form:before {
-  border: none;
-}
-
-.login-form textarea {
-  width: 691px;
-  height: 285px;
-}
-
 .adscontainer {
   margin-top: 70px;
 }
@@ -123,27 +110,10 @@ textarea:focus {
   text-align: center;
 }
 
-.counter #data-result h1 {
-  font-size: 40px;
-  text-align: center;
-  color: @base;
-}
-
-.counter #data-result h3 {
-  font-size: 75px;
-  line-height: 80px;
-  text-align: center;
-  color: @firm;
-  padding: 10px 0;
-}
-
-.counter #data-result a.login-link {
-  color: @base;
-}
-
-.login-form textarea {
-  width: 691px;
-  height: 285px;
+.counter textarea {
+  margin: 20px 0;
+  width: 100%;
+  height: 575px;
 }
 
 .adscontainer {
@@ -154,17 +124,50 @@ textarea:focus {
   border-color: #2980B9;
 }
 
+.form-comment {
+  font-style: italic;
+  margin: 30px 0;
+}
+
 .bmi {
+  .bmi-info {
+    border-bottom: 1px solid @lightgray;
+    padding: 20px 0 20px 0;
+
+    .bmi-badge {
+      float: left;
+      height: 30px;
+      width: 60px;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    p {
+      margin: 0 0 0 75px
+    }
+  }
   .underweight {
-    color: @pomegranate;
+    color: @alizarin;
+  }
+  .underweight-bg {
+    background-color: @alizarin;
   }
   .normal {
     color: @nephritis;
   }
+  .normal-bg {
+    background-color: @nephritis;
+  }
   .overweight {
     color: @carrot;
   }
+  .overweight-bg {
+    background-color: @carrot;
+  }
   .obese {
     color: @pomegranate;
+  }
+  .obese-bg {
+    background-color: @pomegranate;
   }
 }

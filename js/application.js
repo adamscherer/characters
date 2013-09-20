@@ -25,27 +25,20 @@
   // Counter
   $(function() {
   
-    var input = $('#data-input');
-    var result = $('#data-result');
+    if ($('.counter').length === 0) {
+      return;
+    }
+
+    var input = $('textarea');
     var charactersElement = $('#total-characters');
     var wordsElement = $('#total-words');
 
-    // Disable link clicks to prevent page scrolling
-    $('a[href="#count"]').on('click', function (e) {
-      e.preventDefault();
-      var text = $("textarea").val() || '';
-      charactersElement.text(numberWithCommas(text.length));
-      wordsElement.text(numberWithCommas(text.match(/\S+/g).length));
-      input.hide();
-      result.show();
+    input.on('keyup', function(e) {
+        var text = input.val() || '';
+        charactersElement.text(numberWithCommas(text.length));
+        wordsElement.text(numberWithCommas(text.match(/\S+/g).length));
     });
 
-    $('a.login-link').on('click', function (e) {
-      e.preventDefault();
-      input.show();
-      result.hide();
-    });
-    
   });
   
   // Mortage
@@ -55,6 +48,7 @@
       return;
     }
 
+    var form = $('form');
     var total_field = $('#monthly-amount');
     var total_input = $('#total-input');
     var interest_container = $("select[name='interest']");
@@ -127,13 +121,11 @@
         }
     });
 
-    $.each([total_input, custom_interest, custom_loan_length], function(i, el) {
-      el.on('keyup', function() {
-        calculate();
-      });
+    form.on('submit', function() {
+      calculate();
+      return false;
     });
 
-    calculate();
   });
 
   // BMI
@@ -143,6 +135,7 @@
       return;
     }
 
+    var form = $('form');
     var bmi_field = $('#bmi');
     var weight_input = $('#total-input');
     var feet_container = $("select[name='feet']");
@@ -175,23 +168,51 @@
          }
     });
 
-    feet_container.on('change', function() {
+    form.on('submit', function() {
       calculate();
       return false;
     });
-
-    inches_container.on('change', function() {
-      calculate();
-      return false;
-    });
- 
-    weight_input.on('keyup', function() {
-      calculate();
-    });
-
-    calculate();
 
   });
 
+  // Counter
+  $(function() {
+  
+    if ($('.temperature').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var total_input = $('#total-input');
+    var celsius = $('#celsius');
+    var fahrenheit = $('#fahrenheit');
+
+    function calculate() {
+      if (!isNumber(total_input.val())) {
+        return;
+      }
+
+      if ($('input[name=type]:checked').val() === 'celsius') {
+        celsius.text(total_input.val());
+        fahrenheit.text(ConversionCalculator.calculateFahrenheit(total_input.val()));
+      }
+      else {
+        celsius.text(ConversionCalculator.calculateCelsius(total_input.val()));
+        fahrenheit.text(total_input.val());
+      }
+    }
+
+    total_input.on('keypress', function(e) {
+         if ($.inArray(e.which, key_codes) == -1) {
+           e.preventDefault();
+         }
+    });
+
+    form.on('submit', function() {
+      calculate();
+      return false;
+    });
+
+  });
 
 })(jQuery);

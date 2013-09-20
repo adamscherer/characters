@@ -3573,9 +3573,22 @@ header {
   color: #16a085;
 }
 
-#total-input {
-  height: 22px;
-  font-size: 15px;
+.result-box {
+  margin-top: 20px;
+}
+
+.button-box {
+  padding: 30px 0;
+}
+
+#total-input,
+.form-control {
+  height: 22px !important;
+  font-size: 15px !important;
+}
+
+h3.form-label {
+  font-size: 20px;
 }
 
 .btn-clickable a {
@@ -3642,31 +3655,6 @@ footer address {
   padding: 10px 0 20px;
 }
 
-.login-screen {
-  min-height: 317px;
-  padding: 40px 50px 33px 50px;
-  background-color: #3498DB;
-}
-
-.login-form {
-  position: relative;
-  height: 356px;
-  padding: 24px 23px 20px;
-  background-color: #edeff1;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-}
-
-.login-form:before {
-  border: none;
-}
-
-.login-form textarea {
-  width: 691px;
-  height: 285px;
-}
-
 .adscontainer {
   margin-top: 70px;
 }
@@ -3681,27 +3669,10 @@ textarea:focus {
   text-align: center;
 }
 
-.counter #data-result h1 {
-  font-size: 40px;
-  color: #34495e;
-  text-align: center;
-}
-
-.counter #data-result h3 {
-  padding: 10px 0;
-  font-size: 75px;
-  line-height: 80px;
-  color: #1abc9c;
-  text-align: center;
-}
-
-.counter #data-result a.login-link {
-  color: #34495e;
-}
-
-.login-form textarea {
-  width: 691px;
-  height: 285px;
+.counter textarea {
+  width: 100%;
+  height: 575px;
+  margin: 20px 0;
 }
 
 .adscontainer {
@@ -3712,18 +3683,56 @@ textarea:focus {
   border-color: #2980B9;
 }
 
+.form-comment {
+  margin: 30px 0;
+  font-style: italic;
+}
+
+.bmi .bmi-info {
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #bdc3c7;
+}
+
+.bmi .bmi-info .bmi-badge {
+  float: left;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.bmi .bmi-info p {
+  margin: 0 0 0 75px;
+}
+
 .bmi .underweight {
-  color: #c0392b;
+  color: #e74c3c;
+}
+
+.bmi .underweight-bg {
+  background-color: #e74c3c;
 }
 
 .bmi .normal {
   color: #27ae60;
 }
 
+.bmi .normal-bg {
+  background-color: #27ae60;
+}
+
 .bmi .overweight {
   color: #e67e22;
 }
 
+.bmi .overweight-bg {
+  background-color: #e67e22;
+}
+
 .bmi .obese {
   color: #c0392b;
+}
+
+.bmi .obese-bg {
+  background-color: #c0392b;
 }

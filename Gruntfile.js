@@ -46,6 +46,7 @@ module.exports = function(grunt) {
           'js/brewing-calculator.js',
           'js/publishing-calculator.js',
           'js/finance-calculator.js',
+          'js/conversion-calculator.js',
           'js/application.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
