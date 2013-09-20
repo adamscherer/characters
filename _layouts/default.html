@@ -33,8 +33,27 @@
                 <li><a href="/">Word Counter</a></li>
               </ul>
             </li>
-            <li {% if page.active == 'finance' %}class="active"{% endif %}><a href="/mortgage">Mortgage Calculator</a></li>
-            <li {% if page.active == 'health' %}class="active"{% endif %}><a href="/bmi">BMI Calculator</a></li>
+            <li class="dropdown {% if page.active == 'finance' %}active{% endif %}">
+              <a href="/" data-toggle="dropdown">Finance Calculators</a>
+              <ul>
+                <li><a href="/mortgage">Mortgage Calculator</a></li>
+                <li><a href="/mortgage">Insurance Calculator</a></li>
+              </ul>
+            </li>
+            <li class="dropdown {% if page.active == 'health' %}active{% endif %}">
+              <a href="/" data-toggle="dropdown">Health Calculators</a>
+              <ul>
+                <li><a href="/bmi">BMI Calculator</a></li>
+                <li><a href="/bmi">Framingham Risk Score</a></li>
+              </ul>
+            </li>
+            <li class="dropdown {% if page.active == 'conversion' %}active{% endif %}">
+              <a href="/" data-toggle="dropdown">Conversion Calculators</a>
+              <ul>
+                <li><a href="/bmi">BMI Calculator</a></li>
+                <li><a href="/bmi">Framingham Risk Score</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
