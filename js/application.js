@@ -1,6 +1,6 @@
 (function($) {
 
-  var key_codes = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 0, 8];
+  var key_codes = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 0, 8, 13];
 
   var numberWithCommas = function(x) {
     return (x || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
