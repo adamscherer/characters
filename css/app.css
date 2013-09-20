@@ -3569,6 +3569,10 @@ header {
   margin-top: 75px;
 }
 
+.calculator-heading {
+  color: #16a085;
+}
+
 #total-input {
   height: 22px;
   font-size: 15px;
