@@ -142,6 +142,9 @@
         &:last-child {
           border-radius: 0 0 6px 6px;
         }
+        &:hover, &:focus {
+          background-color: @firm;
+        }
         &.active {
           > a,
           > a:hover,
@@ -360,8 +363,8 @@
         color: @firm;
 
         .caret {
-          border-bottom-color: @firm !important;
-          border-top-color: @firm !important;
+          border-bottom-color: mix(@firm, black, 85%) !important;
+          border-top-color: mix(@firm, black, 85%) !important;
         }
       }
       .dropdown-menu {

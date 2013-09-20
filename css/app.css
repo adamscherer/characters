@@ -1019,6 +1019,11 @@ h6 {
   border-radius: 0 0 6px 6px;
 }
 
+.navbar .nav ul li:hover,
+.navbar .nav ul li:focus {
+  background-color: #1abc9c;
+}
+
 .navbar .nav ul li.active > a,
 .navbar .nav ul li.active > a:hover,
 .navbar .nav ul li.active > a:focus {
@@ -1216,8 +1221,8 @@ h6 {
 }
 
 .navbar .nav li.dropdown.open > .dropdown-toggle .caret {
-  border-top-color: #1abc9c !important;
-  border-bottom-color: #1abc9c !important;
+  border-top-color: #16a085 !important;
+  border-bottom-color: #16a085 !important;
 }
 
 .navbar .nav li.dropdown.open .dropdown-menu {
