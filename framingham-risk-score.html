@@ -1,0 +1,56 @@
+---
+layout: default
+title: Framingham Risk Score
+lead: "The Framingham Risk Score calculator can be used to estimate your 10-year cardiovascular risk."
+active: health
+---
+
+<div class="main container bmi">
+  <div class="row">
+    <div class="span9">
+      <h3 class="demo-panel-title">{{page.title}}</h3>
+      <div class="row-fluid">
+        <div class="span6">
+          <h3 class="demo-panel-title">Age</h3>
+          <div>
+            <input id="total-input" type="text" value="" placeholder="Enter your age..." class="form-control" maxlength="3" />
+          </div>
+
+          <h3 class="demo-panel-title">Total cholesterol, mg/dL</h3>
+          <div>
+            <input id="total-input" type="text" value="" placeholder="Enter total cholesterol..." class="form-control" maxlength="3" />
+          </div>
+
+          <h3 class="demo-panel-title">Do you smoke?</h3>
+          <div>
+            <select name="feet" class="select-block">
+              <option value="3">Yes</option>
+              <option value="4">No</option>
+            </select>
+          </div>
+ 
+          <h3 class="demo-panel-title">HDL cholesterol, mg/dL</h3>
+          <div>
+            <input id="total-input" type="text" value="" placeholder="Enter HDL cholesterol..." class="form-control" maxlength="3" />
+          </div>
+
+          <h3 class="demo-panel-title">Systolic blood pressure, mm Hg (Upper Number)</h3>
+          <div>
+            <input id="total-input" type="text" value="" placeholder="Enter systolic blood pressure..." class="form-control" maxlength="3" />
+          </div>
+        </div>
+        <div class="span6">
+          <div class="demo-headline">
+            <h1 class="demo-logo">
+              <span id="bmi"></span>
+              <small>Your Risk Percentage</small>
+            </h1>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="span3">
+      {% include side-ads.html %}
+    </div>
+  </div>
+</div>
