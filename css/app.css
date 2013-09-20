@@ -3672,6 +3672,24 @@ textarea:focus {
   text-align: center;
 }
 
+.counter #data-result h1 {
+  font-size: 40px;
+  color: #34495e;
+  text-align: center;
+}
+
+.counter #data-result h3 {
+  padding: 10px 0;
+  font-size: 75px;
+  line-height: 80px;
+  color: #1abc9c;
+  text-align: center;
+}
+
+.counter #data-result a.login-link {
+  color: #34495e;
+}
+
 .login-form textarea {
   width: 691px;
   height: 285px;
