@@ -1,0 +1,47 @@
+---
+layout: default
+title: Mash Volume Calculator
+lead: "A simple tool that will tell you if your grain bill will fit in your mash tun. You will need to compensate for the volume under your mash tun."
+active: brewing
+---
+
+<div class="main container mash-volume">
+  <div class="row">
+    <div class="span9">
+      <h2 class="calculator-heading">{{page.title}}</h2>
+      <p>{{page.lead}}</p>
+      <div class="row-fluid">
+        <div class="span5">
+          <form action="#" method="post">
+            <h3 class="form-label">Grain Weight <small>(lb)</small></h3>
+            <div>
+              <input id="total-grain"  type="text" value="" placeholder="" class="form-control">
+            </div>
+            <h3 class="form-label">Mash Thickness <small>(qt/lb)</small></h3>
+            <div>
+              <input id="total-mash"  type="text" value="" placeholder="" class="form-control">
+            </div>
+            <div class="button-box">
+              <input type="submit" class="btn btn-inverse btn-large btn-block" value="Calculate" />
+            </div>
+          </form>
+        </div>
+        <div class="span1">&nbsp;</div>
+        <div class="span6">
+          <div class="well result-box">
+            <div class="demo-headline">
+              <h1 class="demo-logo">
+                <small>YOUR</small>
+                <span id="amount">0</span>
+                <small>VOLUME (GALLONS)</small>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span3">
+      {% include side-ads.html %}
+    </div>
+  </div>
+</div> 

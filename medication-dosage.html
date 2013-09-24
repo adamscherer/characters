@@ -1,0 +1,97 @@
+---
+layout: default
+title: Medication Dosages
+lead: "Useful tool for parents to calculate the child dosage for Ibuprofen, Acetaminophen (Tylenol), Diphenhydramine (Benadryl)."
+active: finance
+---
+
+<div class="main container medication">
+  <div class="row">
+    <div class="span9">
+      <h2 class="calculator-heading">{{page.title}}</h2>
+      <p>{{page.lead}}</p>
+      <div class="row-fluid">
+        <div class="span5">
+          <form action="#" method="post">
+            <h3 class="form-label">Weight</h3>
+            <div>
+              <input id="total-input"  type="text" value="" placeholder="Enter child's weight in pounds..." class="form-control">
+            </div>
+            <h3 class="form-label">Medication Type</h3>
+            <div>
+              <label class="radio">
+                <input type="radio" name="type" id="type1" value="ibuprofen" data-toggle="radio" checked/>
+                Ibuprofen
+              </label>
+              <label class="radio">
+                <input type="radio" name="type" id="type2" value="acetaminophen" data-toggle="radio" />
+                Acetaminophen (Tylenol)
+              </label>
+              <label class="radio">
+                <input type="radio" name="type" id="type3" value="diphenhydramine" data-toggle="radio" />
+                Diphenhydramine (Benadryl)
+              </label>
+            </div>
+            <div id="ibuprofen">
+              <h3 class="form-label">Description</h3>
+              <div>
+                <select name="loan-length" class="select-block">
+                  <option value="60">Advil/Motrin Drops 50mg/1.25ml</option>
+                  <option value="120">Children's liquid 100mg/5ml</option>
+                  <option value="180">Chewable Tablets 50mg each</option>
+                  <option value="240">Junior strength Caps or chews 100mg each</option>
+                </select>
+              </div>
+            </div>
+            <div id="acetaminophen" class="hide">
+              <h3 class="form-label">Medication</h3>
+              <div>
+                <select name="loan-length" class="select-block">
+                  <option value="60">Children's liquid 160mg/5ml</option>
+                  <option value="120">Infant Acetominophen 160mg/5ml</option>
+                  <option value="180">Children's soft chews 80mg each</option>
+                  <option value="240">Junior strength Caps or chews 160mg each</option>
+                </select>
+              </div>
+            </div>
+            <div id="diphenhydramine" class="hide">
+              <h3 class="form-label">Medication</h3>
+              <div>
+                <select name="loan-length" class="select-block">
+                  <option value="60">Children's Liquid 12.5mg/5ml</option>
+                  <option value="120">Children's Allergy Strips 12.5mg each</option>
+                  <option value="180">Chewable Tablet 12.5mg each</option>
+                  <option value="240">Benadryl Allergy Capsule or Tablet 25mg</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <!--<input id="custom-loan-length" type="text" value="" placeholder="Months..." disabled="disabled" class="form-control">-->
+            </div>
+            <div class="button-box">
+              <input type="submit" class="btn btn-inverse btn-large btn-block" value="Calculate" />
+            </div>
+          </form>
+        </div>
+        <div class="span1">&nbsp;</div>
+        <div class="span6">
+          <div class="well result-box">
+            <div class="demo-headline">
+              <h1 class="demo-logo">
+                <small></small>
+                <span id="monthly-amount">0mg</span>
+                <small>DOSAGE</small>
+              </h1>
+            </div>
+          </div>
+          <p class="form-comment"><strong>Source:</strong> <a href="http://www.childrenshealthpartners.com/health-information" target="_blank">Children's Health Partners</a></p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="span3">
+      {% include side-ads.html %}
+    </div>
+  </div>
+</div> 

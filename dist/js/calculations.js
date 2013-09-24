@@ -87,10 +87,33 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
     };
 
 }(window);
-+function () { "use strict";
++function (context) { "use strict";
 
+    context.BrewingCalculator = {};
 
-}();
+    var p_int = function(num) {
+        var n = parseInt(num, 10);
+
+        return isNaN(n) ? 0 : n;
+    };
+
+    var numberWithCommas = function(x) {
+        return (x || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
+    var isNumber = function(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    };
+
+    BrewingCalculator.getVolume = function(weight, mash) {
+        return Math.round(weight* ( 0.08 + mash / 4) * 100) / 100;
+    }
+
+    BrewingCalculator.getStrikeTemperature = function(mt, sT, gT) {
+        return Math.round(sT + 0.192 * (sT - gT) / mt + 3);
+    }
+
+}(window);
 +function () { "use strict";
 
 
@@ -444,6 +467,47 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
 
     form.on('submit', function() {
       calculate();
+      return false;
+    });
+
+  });
+
+  // Mash Volume
+  $(function() {
+  
+    if ($('.mash-volume').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var totalGrain = $('#total-grain');
+    var mashThickness = $('#total-mash');
+    var amount_field = $('#amount');
+
+    form.on('submit', function(e) {
+      var gallons = BrewingCalculator.getVolume(parseFloat(totalGrain.val()), parseFloat(mashThickness.val()));
+      amount_field.text(gallons);
+      return false;
+    });
+
+  });
+
+  // Strike Temperature
+  $(function() {
+  
+    if ($('.strike-temperature').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var desiredTemperature = $('#desired-temperature');
+    var mashThickness = $('#total-mash');
+    var temperatureGrain = $('#temperature-grain');
+    var amount_field = $('#amount');
+
+    form.on('submit', function(e) {
+      var temperature = BrewingCalculator.getStrikeTemperature(parseFloat(mashThickness.val()), parseFloat(desiredTemperature.val()), parseFloat(temperatureGrain.val()));
+      amount_field.text(temperature + '&deg;');
       return false;
     });
 

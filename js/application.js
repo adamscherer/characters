@@ -305,4 +305,45 @@
 
   });
 
+  // Mash Volume
+  $(function() {
+  
+    if ($('.mash-volume').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var totalGrain = $('#total-grain');
+    var mashThickness = $('#total-mash');
+    var amount_field = $('#amount');
+
+    form.on('submit', function(e) {
+      var gallons = BrewingCalculator.getVolume(parseFloat(totalGrain.val()), parseFloat(mashThickness.val()));
+      amount_field.text(gallons);
+      return false;
+    });
+
+  });
+
+  // Strike Temperature
+  $(function() {
+  
+    if ($('.strike-temperature').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var desiredTemperature = $('#desired-temperature');
+    var mashThickness = $('#total-mash');
+    var temperatureGrain = $('#temperature-grain');
+    var amount_field = $('#amount');
+
+    form.on('submit', function(e) {
+      var temperature = BrewingCalculator.getStrikeTemperature(parseFloat(mashThickness.val()), parseFloat(desiredTemperature.val()), parseFloat(temperatureGrain.val()));
+      amount_field.text(temperature + '&deg;');
+      return false;
+    });
+
+  });
+
 })(jQuery);

@@ -1,0 +1,51 @@
+---
+layout: default
+title: Strike Temperature
+lead: "Determine what your strike temperature will need to be to meet the desired mash-in temperature."
+active: brewing
+---
+
+<div class="main container strike-temperature">
+  <div class="row">
+    <div class="span9">
+      <h2 class="calculator-heading">{{page.title}}</h2>
+      <p>{{page.lead}}</p>
+      <div class="row-fluid">
+        <div class="span6">
+          <form action="#" method="post">
+            <h3 class="form-label">Mash Thickness <small>(qt/lb)</small></h3>
+            <div>
+              <input id="total-mash"  type="text" value="" placeholder="" class="form-control">
+            </div>
+            <h3 class="form-label">Desired Strike Temperature <small>(F)</small></h3>
+            <div>
+              <input id="desired-temperature"  type="text" value="" placeholder="" class="form-control">
+            </div>
+            <h3 class="form-label">Temperature of Grain <small>(F)</small></h3>
+            <div>
+              <input id="temperature-grain"  type="text" value="" placeholder="" class="form-control">
+            </div>
+            <div class="button-box">
+              <input type="submit" class="btn btn-inverse btn-large btn-block" value="Calculate" />
+            </div>
+          </form>
+        </div>
+        <div class="span1">&nbsp;</div>
+        <div class="span5">
+          <div class="well result-box">
+            <div class="demo-headline">
+              <h1 class="demo-logo">
+                <small>YOUR</small>
+                <span id="amount">0</span>
+                <small>STRIKE TEMPERATURE</small>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span3">
+      {% include side-ads.html %}
+    </div>
+  </div>
+</div> 
