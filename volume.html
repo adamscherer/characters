@@ -1,52 +1,57 @@
 ---
 layout: default
 title: Volume Conversion
-lead: "Convert between any volume unit."
+lead: "Easily convert between various volume units."
 active: conversion
 ---
 
-<div class="main container framingham">
+<div class="main container volume">
   <div class="row">
     <div class="span9">
       <h2 class="calculator-heading">{{page.title}}</h2>
       <p>{{page.lead}}</p>
       <div class="row-fluid">
         <div class="span6">
-          <h3 class="demo-panel-title">1. Age</h3>
-          <div>
-            <input id="total-input" type="text" value="" placeholder="Enter weight in pounds..." class="form-control" maxlength="3" />
-          </div>
+          <form action="#" method="post">
+            <h3 class="form-label">Volume</h3>
+            <div>
+              <input id="total-input" type="text" value="" placeholder="Enter the volume..." class="form-control" maxlength="3" />
+            </div>
 
-          <h3 class="demo-panel-title">2. Total cholesterol, mg/dL</h3>
-          <div>
-            <input id="total-input" type="text" value="" placeholder="Enter total cholesterol..." class="form-control" maxlength="3" />
-          </div>
+            <h3 class="form-label">Current Unit</h3>
+            <div>
+              <select name="interest" class="select-block">
+                <option value="3.50">3.50%</option>
+                <option value="3.75">3.75%</option>
+                <option value="4.00" selected>4.00%</option>
+                <option value="4.25">4.25%</option>
+                <option value="4.50">4.50%</option>
+                <option value="4.75">4.75%</option>
+                <option value="5.00">5.00%</option>
+                <option value="5.25">5.25%</option>
+                <option value="5.50">5.50%</option>
+                <option value="5.75">5.75%</option>
+                <option value="6.00">6.00%</option>
+                <option value="custom">Custom</option>
+              </select>
+            </div>
 
-          <h3 class="demo-panel-title">3. Do you smoke?</h3>
-          <div>
-            <select name="feet" class="select-block">
-              <option value="3">Yes</option>
-              <option value="4">No</option>
-            </select>
-          </div>
- 
-          <h3 class="demo-panel-title">4. HDL cholesterol, mg/dL</h3>
-          <div>
-            <input id="total-input" type="text" value="" placeholder="Enter HDL cholesterol..." class="form-control" maxlength="3" />
-          </div>
-
-          <h3 class="demo-panel-title">4. Systolic blood pressure, mm Hg (Upper Number)</h3>
-          <div>
-            <input id="total-input" type="text" value="" placeholder="Enter HDL cholesterol..." class="form-control" maxlength="3" />
-          </div>
+            <div class="button-box">
+              <input type="submit" class="btn btn-inverse btn-large btn-block" value="Convert" />
+            </div>
+          </form>
         </div>
-        <div class="span6">
-          <div class="demo-headline">
-            <h1 class="demo-logo">
-              <span id="bmi"></span>
-              <small>Your Risk Percentage</small>
-            </h1>
-          </div> 
+        <div class="span1">&nbsp;</div>
+        <div class="span5">
+          <div class="well result-box">
+            <div class="demo-headline">
+              <h1 class="demo-logo">
+                <span id="celsius">0</span>
+                <small>VOLUME</small>
+              </h1>
+            </div>
+          </div>
+          <p class="form-comment"><strong>Source:</strong> <a href="http://en.wikipedia.org/wiki/Conversion_of_units#Volume" target="_blank">Wikipedia</a></p>
         </div>
       </div>
     </div> 
@@ -54,4 +59,4 @@ active: conversion
       {% include side-ads.html %}
     </div>
   </div>
-</div>
+</div> 

@@ -50,7 +50,7 @@ active: health
 
             <h3 class="form-label">Age <small>(optional)</small></h3>
             <div>
-              <input type="text" value="" placeholder="Enter you age..." class="form-control" maxlength="3" />
+              <input type="text" name="age" value="" placeholder="Enter you age..." class="form-control" maxlength="3" />
             </div>
 
             <h3 class="form-label">Gender <small>(optional)</small></h3>
@@ -76,12 +76,21 @@ active: health
         <div class="span1">&nbsp;</div>
         <div class="span5">
           <div class="well result-box">
-            <div class="demo-headline">
+            <div class="demo-headline default-view">
               <h1 class="demo-logo">
                 <small>YOUR</small>
                 <span id="bmi">0</span>
                 <small>BMI</small>
               </h1>
+            </div>
+            <div class="percentile">
+              <div class="demo-headline">
+                <h1 class="demo-logo">
+                  <small>YOU ARE IN THE</small>
+                  <span id="bmi-percentile">80th</span>
+                  <small>PERCENTILE</small>
+                </h1>
+              </div>
             </div>
           </div>
 

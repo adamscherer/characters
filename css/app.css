@@ -3691,6 +3691,30 @@ textarea:focus {
 .bmi .bmi-info {
   padding: 20px 0 20px 0;
   border-bottom: 1px solid #bdc3c7;
+  opacity: 1;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
+     -moz-transition: all 0.4s ease-in-out 0.2s;
+      -ms-transition: all 0.4s ease-in-out 0.2s;
+       -o-transition: all 0.4s ease-in-out 0.2s;
+          transition: all 0.4s ease-in-out 0.2s;
+}
+
+.bmi .bmi-info.active-percent {
+  opacity: 0;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+  -webkit-transform: scale(0);
+     -moz-transform: scale(0);
+      -ms-transform: scale(0);
+       -o-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition-delay: 0s;
+     -moz-transition-delay: 0s;
+      -ms-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s;
 }
 
 .bmi .bmi-info .bmi-badge {
@@ -3703,6 +3727,86 @@ textarea:focus {
 
 .bmi .bmi-info p {
   margin: 0 0 0 75px;
+}
+
+.bmi .result-box {
+  position: relative;
+  width: 243px;
+  height: 194px;
+  overflow: hidden;
+  opacity: 1;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
+     -moz-transition: all 0.4s ease-in-out 0.2s;
+      -ms-transition: all 0.4s ease-in-out 0.2s;
+       -o-transition: all 0.4s ease-in-out 0.2s;
+          transition: all 0.4s ease-in-out 0.2s;
+}
+
+.bmi .result-box .percentile {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 243px;
+  height: 194px;
+  overflow: hidden;
+  opacity: 0;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+  -webkit-transform: scale(0) rotate(-180deg);
+     -moz-transform: scale(0) rotate(-180deg);
+      -ms-transform: scale(0) rotate(-180deg);
+       -o-transform: scale(0) rotate(-180deg);
+          transform: scale(0) rotate(-180deg);
+  -webkit-transition: all 0.4s ease-in;
+     -moz-transition: all 0.4s ease-in;
+      -ms-transition: all 0.4s ease-in;
+       -o-transition: all 0.4s ease-in;
+          transition: all 0.4s ease-in;
+}
+
+.bmi .result-box.active-percent .percentile {
+  opacity: 1;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+  -webkit-transform: scale(1) rotate(0deg);
+     -moz-transform: scale(1) rotate(0deg);
+      -ms-transform: scale(1) rotate(0deg);
+       -o-transform: scale(1) rotate(0deg);
+          transform: scale(1) rotate(0deg);
+  -webkit-transition-delay: 0.2s;
+     -moz-transition-delay: 0.2s;
+      -ms-transition-delay: 0.2s;
+       -o-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.bmi .result-box .default-view {
+  opacity: 1;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
+     -moz-transition: all 0.4s ease-in-out 0.2s;
+      -ms-transition: all 0.4s ease-in-out 0.2s;
+       -o-transition: all 0.4s ease-in-out 0.2s;
+          transition: all 0.4s ease-in-out 0.2s;
+}
+
+.bmi .result-box.active-percent .default-view {
+  opacity: 0;
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+  -webkit-transform: scale(0);
+     -moz-transform: scale(0);
+      -ms-transform: scale(0);
+       -o-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition-delay: 0s;
+     -moz-transition-delay: 0s;
+      -ms-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s;
 }
 
 .bmi .underweight {

@@ -141,6 +141,7 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
   $(function() {
     // Placeholders for input/textarea
     $("input, textarea").placeholder();
+    $(".select-block").selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
   });
 
   // Counter
@@ -204,9 +205,6 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
       total_field.text(FinanceCalculator.calculateMortgagePayment(total_input.val(), getInterest(), getLoanLength()));
     }
 
-    interest_container.selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
-    loan_length_container.selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
-
     interest_container.on('change', function() {
       $(this).siblings().removeClass("active").end().addClass("active");
       if ($(this).hasClass('custom')) {
@@ -257,16 +255,31 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
     }
 
     var form = $('form');
+    var result_box = $('.result-box');
     var bmi_field = $('#bmi');
+    var bmi_percentile = $('#bmi-percentile');
     var weight_input = $('#total-input');
     var feet_container = $("select[name='feet']");
     var inches_container = $("select[name='inches']");
+    var age = $("input[name='age']");
+    var bmi_info = $(".bmi-info");
 
     feet_container.selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
     inches_container.selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
 
     function calculate() {
       var bmi = HealthCalculator.calculateBmi(weight_input.val(), HealthCalculator.calculateHeightInInches(feet_container.val(), inches_container.val()));
+      var gender_val = $('input[name=gender]:checked').val();
+      var age_val = p_int(age.val());
+      if (gender_val && age_val > 0 && age_val < 18) {
+        bmi_percentile.text('20');
+        result_box.addClass('active-percent');
+        bmi_info.addClass('active-percent');
+        return;
+      }
+
+      result_box.removeClass('active-percent');
+      bmi_info.removeClass('active-percent');
       bmi_field.text(bmi);
 
       bmi_field.removeClass();
@@ -275,10 +288,17 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
         return;
       }
 
-      if (value > 30 || value < 18.5) {
-        bmi_field.addClass('obese');
-      } else {
+      if (value < 18.5) {
+        bmi_field.addClass('underweight');
+      } 
+      else if (value >= 18.5 && value < 25) {
         bmi_field.addClass('normal');
+      } 
+      else if (value >= 25 && value < 30) {
+        bmi_field.addClass('overweight');
+      } 
+      else if (value >= 30) {
+        bmi_field.addClass('obese');
       }
       
     }
@@ -296,10 +316,50 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
 
   });
 
-  // Counter
+  // Temperature
   $(function() {
   
     if ($('.temperature').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var total_input = $('#total-input');
+    var celsius = $('#celsius');
+    var fahrenheit = $('#fahrenheit');
+
+    function calculate() {
+      if (!isNumber(total_input.val())) {
+        return;
+      }
+
+      if ($('input[name=type]:checked').val() === 'celsius') {
+        celsius.text(total_input.val());
+        fahrenheit.text(ConversionCalculator.calculateFahrenheit(total_input.val()));
+      }
+      else {
+        celsius.text(ConversionCalculator.calculateCelsius(total_input.val()));
+        fahrenheit.text(total_input.val());
+      }
+    }
+
+    total_input.on('keypress', function(e) {
+         if ($.inArray(e.which, key_codes) == -1) {
+           e.preventDefault();
+         }
+    });
+
+    form.on('submit', function() {
+      calculate();
+      return false;
+    });
+
+  });
+
+  // Volume
+  $(function() {
+  
+    if ($('.volume').length === 0) {
       return;
     }
 
