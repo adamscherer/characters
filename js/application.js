@@ -136,12 +136,17 @@
     var form = $('form');
     var result_box = $('.result-box');
     var bmi_field = $('#bmi');
+    var bmi_number = $('#bmi-number');
     var bmi_percentile = $('#bmi-percentile');
     var weight_input = $('#total-input');
     var feet_container = $("select[name='feet']");
     var inches_container = $("select[name='inches']");
     var age = $("input[name='age']");
-    var bmi_info = $(".bmi-info");
+    var bmi_info = $(".info-section");
+
+    var boys = {
+      2 : []
+    }
 
     feet_container.selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
     inches_container.selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
@@ -150,17 +155,41 @@
       var bmi = HealthCalculator.calculateBmi(weight_input.val(), HealthCalculator.calculateHeightInInches(feet_container.val(), inches_container.val()));
       var gender_val = $('input[name=gender]:checked').val();
       var age_val = p_int(age.val());
-      if (gender_val && age_val > 0 && age_val < 18) {
-        bmi_percentile.text('20');
-        result_box.addClass('active-percent');
-        bmi_info.addClass('active-percent');
+      bmi_field.text(bmi);
+      bmi_number.text(bmi + ' BMI');
+      if (gender_val && age_val >= 2 && age_val <= 20) {
+        renderChild(HealthCalculator.calculateBmiPercentage(age.val(), gender_val, parseFloat(bmi)));
         return;
       }
 
-      result_box.removeClass('active-percent');
-      bmi_info.removeClass('active-percent');
-      bmi_field.text(bmi);
+      renderAdult(bmi);
+    }
 
+    function renderChild(percentile) {
+      bmi_percentile.text(percentile + '%');
+      bmi_info.addClass('active-percent');
+      bmi_percentile.removeClass();
+      var value = parseFloat(percentile);
+      if (value === 0) {
+        return;
+      }
+
+      if (value < 5) {
+        bmi_percentile.addClass('underweight');
+      } 
+      else if (value >= 5 && value < 85) {
+        bmi_percentile.addClass('normal');
+      } 
+      else if (value >= 85 && value < 95) {
+        bmi_percentile.addClass('overweight');
+      } 
+      else if (value >= 95) {
+        bmi_percentile.addClass('obese');
+      }
+    }
+
+    function renderAdult(bmi) {
+      bmi_info.removeClass('active-percent');
       bmi_field.removeClass();
       var value = parseFloat(bmi);
       if (value === 0) {
@@ -179,7 +208,6 @@
       else if (value >= 30) {
         bmi_field.addClass('obese');
       }
-      
     }
 
     weight_input.on('keypress', function(e) {

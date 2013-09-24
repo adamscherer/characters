@@ -32,6 +32,29 @@
         return isNaN(bmi) ? 0 : bmi.toFixed(1);
     };
 
+    HealthCalculator.calculateBmiPercentage = function(age, gender, bmi) {
+        var genderRange = BmiData[gender];
+        if (!genderRange) {
+            return null;
+        }
+
+        var ageRange = genderRange[age];
+        if (!ageRange) {
+            return null;
+        }
+
+        var closest = null,
+            i = 0, len = ageRange.length;
+
+        for (; i < len; i++) {
+          if (closest == null || Math.abs(ageRange[i] - bmi) < Math.abs(ageRange[closest] - bmi)) {
+            closest = i;
+          }
+        }
+
+        return (closest + 3).toString();
+    };
+
     /*
      * Source: CDC - http://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html
      * 

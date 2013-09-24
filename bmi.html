@@ -56,61 +56,86 @@ active: health
             <h3 class="form-label">Gender <small>(optional)</small></h3>
             <div>
               <label class="radio">
-                <input type="radio" name="gender" id="gender1" value="male" data-toggle="radio" />
+                <input type="radio" name="gender" id="gender1" value="boy" data-toggle="radio" />
                 Male
               </label>
               <label class="radio">
-                <input type="radio" name="gender" id="gender2" value="female" data-toggle="radio" />
+                <input type="radio" name="gender" id="gender2" value="girl" data-toggle="radio" />
                 Female
               </label>
             </div>
 
-            <p class="form-comment"><strong>Note:</strong> Age and Gender are only used to determine whether a percentage or BMI should be calculated.</p>
-
-            <div>
+            <div class="button-box">
               <input type="submit" class="btn btn-inverse btn-large btn-block" value="Calculate" />
             </div>
           </form>
 
+          <p class="form-comment no-top"><strong>Note:</strong> Age and Gender are only used to determine whether a percentage or BMI should be calculated.</p>
+
+          <p class="form-comment"><strong>Source:</strong> <a href="http://en.wikipedia.org/wiki/Body_mass_index" target="_blank">Wikipedia</a> and <a href="http://www.cdc.gov/healthyweight/assessing/bmi/childrens_bmi/about_childrens_bmi.html">CDC</a></p>
         </div>
         <div class="span1">&nbsp;</div>
         <div class="span5">
-          <div class="well result-box">
-            <div class="demo-headline default-view">
-              <h1 class="demo-logo">
-                <small>YOUR</small>
-                <span id="bmi">0</span>
-                <small>BMI</small>
-              </h1>
+
+
+          <div class="info-section">
+            <div class="adult-info">
+              <div class="well result-box">
+                <div class="demo-headline">
+                  <h1 class="demo-logo">
+                    <span id="bmi">0</span>
+                    <small>BMI</small>
+                  </h1>
+                </div>
+              </div>
+
+              <div class="bmi-info">
+                <span class="label bmi-badge underweight-bg">< 18.5</span>
+                <p><strong>Under 18.5</strong> suggests the person is underweight</p>
+              </div>
+              <div class="bmi-info">
+                <span class="label bmi-badge normal-bg">18.5 to 25</span>
+                <p><strong>18.5 to 25</strong> may indicate optimal weigh</p>
+              </div>
+              <div class="bmi-info">
+                <span class="label bmi-badge overweight-bg">25 to 30</span>
+                <p><strong>25 to 30</strong> may indicate the person is overweight</p>
+              </div>
+              <div class="bmi-info">
+                <span class="label bmi-badge obese-bg">> 30</span>
+                <p><strong>Over 30</strong> suggests the person is obese</p>
+              </div>
             </div>
-            <div class="percentile">
-              <div class="demo-headline">
-                <h1 class="demo-logo">
-                  <small>YOU ARE IN THE</small>
-                  <span id="bmi-percentile">80th</span>
-                  <small>PERCENTILE</small>
-                </h1>
+
+            <div class="percentile-info">
+              <div class="well result-box">
+                <div class="demo-headline">
+                    <h1 class="demo-logo">
+                      <small id="bmi-number"></small>
+                      <span id="bmi-percentile"></span>
+                      <small>PERCENTILE</small>
+                    </h1>
+                </div>
+              </div>
+              <div class="bmi-info">
+                <span class="label bmi-badge underweight-bg">< 5th</span>
+                <p><strong>Underweight</strong> Less than the 5th percentile</p>
+              </div>
+              <div class="bmi-info">
+                <span class="label bmi-badge normal-bg">5th - 85th</span>
+                <p><strong>Healthy weight</strong> 5th percentile to less than the 85th percentile</p>
+              </div>
+              <div class="bmi-info">
+                <span class="label bmi-badge overweight-bg">85th - 95th</span>
+                <p><strong>Overweight</strong> may indicate the person is overweight</p>
+              </div>
+              <div class="bmi-info">
+                <span class="label bmi-badge obese-bg">>= 95th</span>
+                <p><strong>Obese</strong> Equal to or greater than the 95th percentile</p>
               </div>
             </div>
           </div>
 
-          <div class="bmi-info">
-            <span class="label bmi-badge underweight-bg">< 18.5</span>
-            <p><strong>Under 18.5</strong> suggests the person is underweight</p>
-          </div>
-          <div class="bmi-info">
-            <span class="label bmi-badge normal-bg">18.5 to 25</span>
-            <p><strong>18.5 to 25</strong> may indicate optimal weigh</p>
-          </div>
-          <div class="bmi-info">
-            <span class="label bmi-badge overweight-bg">25 to 30</span>
-            <p><strong>25 to 30</strong> may indicate the person is overweight</p>
-          </div>
-          <div class="bmi-info">
-            <span class="label bmi-badge obese-bg">> 30</span>
-            <p><strong>Over 30</strong> suggests the person is obese</p>
-          </div>
-          <p class="form-comment"><strong>Source:</strong> <a href="http://en.wikipedia.org/wiki/Body_mass_index" target="_blank">Wikipedia</a></p>
         </div>
       </div>
     </div> 
@@ -119,3 +144,5 @@ active: health
     </div>
   </div>
 </div>
+
+<script src="js/bmi-data.js"></script>

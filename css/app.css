@@ -3688,6 +3688,10 @@ textarea:focus {
   font-style: italic;
 }
 
+.form-comment.no-top {
+  margin: 0 0 30px 0;
+}
+
 .bmi .bmi-info {
   padding: 20px 0 20px 0;
   border-bottom: 1px solid #bdc3c7;
@@ -3719,21 +3723,19 @@ textarea:focus {
 
 .bmi .bmi-info .bmi-badge {
   float: left;
-  width: 60px;
+  width: 63px;
   height: 30px;
   line-height: 30px;
   text-align: center;
 }
 
 .bmi .bmi-info p {
-  margin: 0 0 0 75px;
+  margin: 0 0 0 78px;
 }
 
-.bmi .result-box {
+.bmi .info-section {
   position: relative;
-  width: 243px;
-  height: 194px;
-  overflow: hidden;
+  height: 625px;
   opacity: 1;
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
       filter: alpha(opacity=100);
@@ -3744,13 +3746,10 @@ textarea:focus {
           transition: all 0.4s ease-in-out 0.2s;
 }
 
-.bmi .result-box .percentile {
+.bmi .info-section .percentile-info {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 243px;
-  height: 194px;
-  overflow: hidden;
+  top: 0;
+  left: 0;
   opacity: 0;
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
       filter: alpha(opacity=0);
@@ -3766,7 +3765,7 @@ textarea:focus {
           transition: all 0.4s ease-in;
 }
 
-.bmi .result-box.active-percent .percentile {
+.bmi .info-section.active-percent .percentile-info {
   opacity: 1;
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
       filter: alpha(opacity=100);
@@ -3782,7 +3781,7 @@ textarea:focus {
           transition-delay: 0.2s;
 }
 
-.bmi .result-box .default-view {
+.bmi .info-section .adult-info {
   opacity: 1;
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
       filter: alpha(opacity=100);
@@ -3793,7 +3792,7 @@ textarea:focus {
           transition: all 0.4s ease-in-out 0.2s;
 }
 
-.bmi .result-box.active-percent .default-view {
+.bmi .info-section.active-percent .adult-info {
   opacity: 0;
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
       filter: alpha(opacity=0);
