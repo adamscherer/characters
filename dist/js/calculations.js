@@ -165,6 +165,14 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
     // Placeholders for input/textarea
     $("input, textarea").placeholder();
     $(".select-block").selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
+
+
+    $("input[data-numbers]").on('keypress', function(e) {
+         if ($.inArray(e.which, key_codes) == -1) {
+           e.preventDefault();
+         }
+    });
+
   });
 
   // Counter
@@ -353,12 +361,6 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
         bmi_field.addClass('obese');
       }
     }
-
-    weight_input.on('keypress', function(e) {
-         if ($.inArray(e.which, key_codes) == -1) {
-           e.preventDefault();
-         }
-    });
 
     form.on('submit', function() {
       calculate();
