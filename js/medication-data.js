@@ -37,7 +37,7 @@
             advil: '1 2/3 syringe (1.875ml + 01.25ml)',
             children: '1 ¼ tsp (6.25ml)',
             chewable: '2 ½ tablets',
-            junior: ''
+            junior: '1 tablet'
         },
         {
             min: 33, 
@@ -55,7 +55,7 @@
             advil: '2 1/3 syringes (2 x 1.875ml + 0.625ml)',
             children: '1 ¾ tsp (8.75ml)',
             chewable: '3 ½ tablets',
-            junior: ''
+            junior: '1 ½ tablet'
         },
         {
             min: 43, 
@@ -160,7 +160,7 @@
             milligram: 200,
             children: '1 1/4 tsp (6.25ml)',
             chewable: '2 1/2 tablets',
-            junior: ''
+            junior: '1 tablet'
         },
         {
             min: 33, 
@@ -176,7 +176,7 @@
             milligram: 280,
             children: '1 3/4 tsp (8.75ml)',
             chewable: '3 1/2 tablets',
-            junior: ''
+            junior: '1 1/2 tablet'
         },
         {
             min: 43, 
@@ -258,7 +258,7 @@
             max: 32, 
             milligram: 15.625,
             children: '1 1/4 tsp (6.25ml)',
-            chewable: '',
+            chewable: '1 tablet or strip',
             capsule: 'N/A'
         },
         {
@@ -266,7 +266,7 @@
             max: 38, 
             milligram: 18.75,
             children: '1 1/2 tsp (7.5ml)',
-            chewable: '',
+            chewable: '1 tablet or strip',
             capsule: 'N/A'
         },
         {
@@ -274,7 +274,7 @@
             max: 43, 
             milligram: 21.875,
             children: '1 3/4 tsp (8.75ml)',
-            chewable: '',
+            chewable: '1 tablet or strip',
             capsule: 'N/A'
         },
         {
@@ -290,8 +290,8 @@
             max: 65, 
             milligram: 31.25,
             children: '2 1/2 tsp (12.5ml)',
-            chewable: '',
-            capsule: ''
+            chewable: '2 tablets or strips',
+            capsule: '1 tablet or capsule'
         },
         {
             min: 66, 
@@ -299,15 +299,15 @@
             milligram: 37.5,
             children: '3 tsp (15ml)',
             chewable: '3 tablets or strips',
-            capsule: ''
+            capsule: '1 tablet or capsule'
         },
         {
             min: 77, 
             max: 87, 
             milligram: 43.75,
             children: '3 1/2 tsp (17.5ml)',
-            chewable: '',
-            capsule: ''
+            chewable: '3 tablets or strips',
+            capsule: '1 tablet or capsule'
         },
         {
             min: 88, 

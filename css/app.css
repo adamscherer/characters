@@ -3735,7 +3735,7 @@ textarea:focus {
 
 .bmi .info-section {
   position: relative;
-  height: 625px;
+  height: 655px;
   opacity: 1;
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
       filter: alpha(opacity=100);
