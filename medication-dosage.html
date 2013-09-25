@@ -2,7 +2,7 @@
 layout: default
 title: Medication Dosages
 lead: "Useful tool for parents to calculate the child dosage for Ibuprofen, Acetaminophen (Tylenol), Diphenhydramine (Benadryl)."
-active: finance
+active: health
 ---
 
 <div class="main container medication">
@@ -15,7 +15,7 @@ active: finance
           <form action="#" method="post">
             <h3 class="form-label">Weight</h3>
             <div>
-              <input id="total-input"  type="text" value="" placeholder="Enter child's weight in pounds..." class="form-control">
+              <input id="weight-input"  type="text" value="" placeholder="Enter child's weight in pounds..." class="form-control" data-numbers="true" maxlength="3">
             </div>
             <h3 class="form-label">Medication Type</h3>
             <div>
@@ -33,42 +33,39 @@ active: finance
               </label>
             </div>
             <div id="ibuprofen">
-              <h3 class="form-label">Description</h3>
+              <h3 class="form-label">Ibuprofen Type</h3>
               <div>
                 <select name="loan-length" class="select-block">
-                  <option value="60">Advil/Motrin Drops 50mg/1.25ml</option>
-                  <option value="120">Children's liquid 100mg/5ml</option>
-                  <option value="180">Chewable Tablets 50mg each</option>
-                  <option value="240">Junior strength Caps or chews 100mg each</option>
+                  <option value="advil">Advil/Motrin Drops 50mg/1.25ml</option>
+                  <option value="children">Children's liquid 100mg/5ml</option>
+                  <option value="chewable">Chewable Tablets 50mg each</option>
+                  <option value="junior">Junior strength Caps or chews 100mg each</option>
                 </select>
               </div>
             </div>
             <div id="acetaminophen" class="hide">
-              <h3 class="form-label">Medication</h3>
+              <h3 class="form-label">Acetaminophen Type</h3>
               <div>
                 <select name="loan-length" class="select-block">
-                  <option value="60">Children's liquid 160mg/5ml</option>
-                  <option value="120">Infant Acetominophen 160mg/5ml</option>
-                  <option value="180">Children's soft chews 80mg each</option>
-                  <option value="240">Junior strength Caps or chews 160mg each</option>
+                  <option value="children">Children's liquid 160mg/5ml</option>
+                  <option value="children">Infant Acetaminophen 160mg/5ml</option>
+                  <option value="chewable">Children's soft chews 80mg each</option>
+                  <option value="junior">Junior strength Caps or chews 160mg each</option>
                 </select>
               </div>
             </div>
             <div id="diphenhydramine" class="hide">
-              <h3 class="form-label">Medication</h3>
+              <h3 class="form-label">Diphenhydramine Type</h3>
               <div>
                 <select name="loan-length" class="select-block">
-                  <option value="60">Children's Liquid 12.5mg/5ml</option>
-                  <option value="120">Children's Allergy Strips 12.5mg each</option>
-                  <option value="180">Chewable Tablet 12.5mg each</option>
-                  <option value="240">Benadryl Allergy Capsule or Tablet 25mg</option>
+                  <option value="children">Children's Liquid 12.5mg/5ml</option>
+                  <option value="chewable">Children's Allergy Strips 12.5mg each</option>
+                  <option value="chewable">Chewable Tablet 12.5mg each</option>
+                  <option value="capsule">Benadryl Allergy Capsule or Tablet 25mg</option>
                 </select>
               </div>
             </div>
 
-            <div>
-              <!--<input id="custom-loan-length" type="text" value="" placeholder="Months..." disabled="disabled" class="form-control">-->
-            </div>
             <div class="button-box">
               <input type="submit" class="btn btn-inverse btn-large btn-block" value="Calculate" />
             </div>
@@ -79,8 +76,8 @@ active: finance
           <div class="well result-box">
             <div class="demo-headline">
               <h1 class="demo-logo">
-                <small></small>
-                <span id="monthly-amount">0mg</span>
+                <small id="type-amount">0 mg</small>
+                <span id="amount">N/A</span>
                 <small>DOSAGE</small>
               </h1>
             </div>
@@ -95,3 +92,5 @@ active: finance
     </div>
   </div>
 </div> 
+
+<script src="js/medication-data.js"></script>

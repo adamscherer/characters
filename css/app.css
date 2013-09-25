@@ -3839,3 +3839,13 @@ textarea:focus {
 .bmi .obese-bg {
   background-color: #c0392b;
 }
+
+.medication .demo-logo {
+  font-size: 45px;
+  line-height: 50px;
+}
+
+.medication .demo-logo span {
+  display: block;
+  margin: 20px 0;
+}

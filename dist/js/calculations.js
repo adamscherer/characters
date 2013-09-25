@@ -513,4 +513,58 @@ if (!jQuery) { throw new Error("Web Calculators requires jQuery") }
 
   });
 
+  // Medication Dosages
+  $(function() {
+  
+    if ($('.medication').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var type = $('input[name=type]');
+    var weight_input = $('#weight-input');
+    var ibuprofen = $('#ibuprofen');
+    var acetaminophen = $('#acetaminophen');
+    var diphenhydramine = $('#diphenhydramine');
+    var type_amount = $('#type-amount');
+    var amount_field = $('#amount');
+
+    type.on('change', function() {
+      $.each([ibuprofen, acetaminophen, diphenhydramine], function() {
+        this.hide();
+      });
+
+      $('#' + $(this).val()).show();
+    });
+
+    form.on('submit', function(e) {
+      var weight = p_int(weight_input.val());
+      var type = $('input[name=type]:checked').val();
+      var medication = MedicationData[type];
+      if (medication) {
+
+        var medication_type = null,
+            i = 0, len = medication.length;
+
+        for (; i < len; i++) {
+          if (medication[i].min <= weight && medication[i].max >= weight) {
+            medication_type = medication[i];
+            break;
+          }
+        }
+        
+        if (medication_type) {
+          var medication_subtype = medication_type[$('#' + type).find('select').val()];
+          if (medication_subtype) {
+            amount_field.text(medication_subtype);
+          }
+          type_amount.text(medication_type.milligram + ' mg');
+        }
+      }
+      
+      return false;
+    });
+
+  });
+
 })(jQuery);
