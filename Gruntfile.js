@@ -37,11 +37,17 @@ module.exports = function(grunt) {
 
     concat: {
       options: {
-        banner: '<%= banner %><%= jqueryCheck %>',
+        banner: '<%= banner %>',
         stripBanners: false
       },
       calculations: {
         src: [
+          'js/lib/jquery-1.8.3.min.js',
+          'js/lib/jquery.placeholder.js',
+          'js/lib/bootstrap.min.js',
+          'js/lib/bootstrap-select.js',
+          'js/lib/flatui-checkbox.js',
+          'js/lib/flatui-radio.js',
           'js/health-calculator.js',
           'js/brewing-calculator.js',
           'js/publishing-calculator.js',
