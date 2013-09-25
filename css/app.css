@@ -3565,7 +3565,7 @@ header {
 }
 
 .main {
-  min-height: 750px;
+  min-height: 700px;
   margin-top: 75px;
 }
 
@@ -3677,6 +3677,10 @@ textarea:focus {
 
 .adscontainer {
   margin-top: 70px;
+}
+
+.comments-container {
+  padding: 10px 0;
 }
 
 textarea:focus {
