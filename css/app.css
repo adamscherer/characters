@@ -3848,4 +3848,10 @@ textarea:focus {
 .medication .demo-logo span {
   display: block;
   margin: 20px 0;
+  overflow: hidden;
+}
+
+.volume .demo-logo span {
+  display: block;
+  overflow: hidden;
 }
