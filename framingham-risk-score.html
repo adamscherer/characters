@@ -5,7 +5,7 @@ lead: "The Framingham Risk Score calculator can be used to estimate your 10-year
 active: health
 ---
 
-<div class="main container bmi">
+<div class="main container framingham">
   <div class="row">
     <div class="span9">
       <h2 class="calculator-heading">{{page.title}}</h2>
@@ -27,12 +27,12 @@ active: health
 
             <h3 class="form-label">Age</h3>
             <div>
-              <input id="total-input" type="text" value="" placeholder="Enter your age..." class="form-control" maxlength="3" />
+              <input id="age-input" type="text" value="" placeholder="Enter your age..." class="form-control" maxlength="3" data-numbers="true"/>
             </div>
 
             <h3 class="form-label">Total cholesterol</h3>
             <div>
-              <input id="total-input" type="text" value="" placeholder="Enter total cholesterol..." class="form-control" maxlength="3" />
+              <input id="cholesterol-input" type="text" value="" placeholder="Enter total cholesterol..." class="form-control" maxlength="3" data-numbers="true"/>
             </div>
 
             <h3 class="form-label">Do you smoke?</h3>
@@ -49,12 +49,12 @@ active: health
    
             <h3 class="form-label">HDL cholesterol</h3>
             <div>
-              <input id="total-input" type="text" value="" placeholder="Enter HDL cholesterol..." class="form-control" maxlength="3" />
+              <input id="hdl-input" type="text" value="" placeholder="Enter HDL cholesterol..." class="form-control" maxlength="3" data-numbers="true"/>
             </div>
 
             <h3 class="form-label">Systolic blood pressure (Upper)</h3>
             <div>
-              <input id="total-input" type="text" value="" placeholder="Enter systolic blood pressure..." class="form-control" maxlength="3" />
+              <input id="systolic-input" type="text" value="" placeholder="Enter systolic blood pressure..." class="form-control" maxlength="3" data-numbers="true"/>
             </div>
 
             <div class="button-box">
@@ -68,7 +68,7 @@ active: health
             <div class="demo-headline">
               <h1 class="demo-logo">
                 <small>YOUR RISK</small>
-                <span id="monthly-amount">0</span>
+                <span id="amount">0</span>
                 <small>PERCENTAGE</small>
               </h1>
             </div>

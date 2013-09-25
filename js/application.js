@@ -274,29 +274,20 @@
 
     var form = $('form');
     var total_input = $('#total-input');
-    var celsius = $('#celsius');
-    var fahrenheit = $('#fahrenheit');
+    var current_input = $('select[name=current]');
+    var desired_input = $('select[name=desired]');
+    var volume = $('#volume');
+    var volume_unit = $('#volume-unit');
 
     function calculate() {
       if (!isNumber(total_input.val())) {
         return;
       }
 
-      if ($('input[name=type]:checked').val() === 'celsius') {
-        celsius.text(total_input.val());
-        fahrenheit.text(ConversionCalculator.calculateFahrenheit(total_input.val()));
-      }
-      else {
-        celsius.text(ConversionCalculator.calculateCelsius(total_input.val()));
-        fahrenheit.text(total_input.val());
-      }
+      var value = ConversionCalculator.calculateVolume(total_input.val(), current_input.val(), desired_input.val());
+      volume.text(value % 1 ? value.toFixed(3): value);
+      volume_unit.text(desired_input.find(':selected').text());
     }
-
-    total_input.on('keypress', function(e) {
-         if ($.inArray(e.which, key_codes) == -1) {
-           e.preventDefault();
-         }
-    });
 
     form.on('submit', function() {
       calculate();
@@ -341,6 +332,27 @@
     form.on('submit', function(e) {
       var temperature = BrewingCalculator.getStrikeTemperature(parseFloat(mashThickness.val()), parseFloat(desiredTemperature.val()), parseFloat(temperatureGrain.val()));
       amount_field.text(temperature + '&deg;');
+      return false;
+    });
+
+  });
+
+  // Framingham Risk Score
+  $(function() {
+  
+    if ($('.framingham').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var age_input = $('#age-input');
+    var cholesterol_input = $('#cholesterol-input');
+    var hdl_input = $('#hdl-input');
+    var systolic_input = $('#systolic-input');
+    var amount_field = $('#amount');
+
+    form.on('submit', function(e) {
+      amount_field.text('N/A');
       return false;
     });
 

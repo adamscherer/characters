@@ -16,4 +16,8 @@
         return Math.round((p_int(fahrenheit) - 32) * (5 / 9));
     };
 
+    ConversionCalculator.calculateVolume = function(value, current, desired) {
+        return (parseFloat(value) * parseFloat(current)) / parseFloat(desired);
+    };
+
 }(window);
