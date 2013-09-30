@@ -1,0 +1,72 @@
+---
+layout: default
+title: Area Conversion
+lead: "Easily convert between various area units."
+active: conversion
+---
+
+<div class="main container area">
+  <div class="row">
+    <div class="span9">
+      <h2 class="calculator-heading">{{page.title}}</h2>
+      <p>{{page.lead}}</p>
+      <div class="row-fluid">
+        <div class="span6">
+          <form action="#" method="post">
+            <h3 class="form-label">Area</h3>
+            <div> 
+              <input id="total-input" type="text" value="" placeholder="Enter the area..." class="form-control" maxlength="6" />
+            </div>
+
+            <h3 class="form-label">Current Unit</h3>
+            <div>
+              <select name="current" class="select-block">
+                <option value="4046.873">Acre (U.S.)</option>
+                <option value="10000">Hectare</option>
+                <option value="2589988.110336">Section</option>
+                <option value=".0929034116132749">Square Foot</option>
+                <option value=".00064516">Square Inch</option>
+                <option value="1000000">Square Kilometre</option>
+                <option value="2589998.47">Square Mile (U.S.)</option>
+                <option value=".83612736">Square Yard (International)</option>
+              </select>
+            </div>
+
+            <h3 class="form-label">Desired Unit</h3>
+            <div>
+              <select name="desired" class="select-block">
+                <option value="4046.873">Acre (U.S.)</option>
+                <option value="10000">Hectare</option>
+                <option value="2589988.110336">Section</option>
+                <option value=".0929034116132749">Square Foot</option>
+                <option value=".00064516">Square Inch</option>
+                <option value="1000000">Square Kilometre</option>
+                <option value="2589998.47">Square Mile (U.S.)</option>
+                <option value=".83612736">Square Yard (International)</option>
+              </select>
+            </div>
+
+            <div class="button-box">
+              <input type="submit" class="btn btn-inverse btn-large btn-block" value="Convert" />
+            </div>
+          </form>
+        </div>
+        <div class="span1">&nbsp;</div>
+        <div class="span5">
+          <div class="well result-box">
+            <div class="demo-headline">
+              <h1 class="demo-logo">
+                <span id="area">0</span>
+                <small id="area-unit">AREA</small>
+              </h1>
+            </div>
+          </div>
+          <p class="form-comment"><strong>Source:</strong> <a href="http://en.wikipedia.org/wiki/Conversion_of_units#Area" target="_blank">Wikipedia</a></p>
+        </div>
+      </div>
+    </div> 
+    <div class="span3">
+      {% include side-ads.html %}
+    </div>
+  </div>
+</div> 
