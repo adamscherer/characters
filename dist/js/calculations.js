@@ -1068,6 +1068,10 @@
         return (parseFloat(value) * parseFloat(current)) / parseFloat(desired);
     };
 
+    ConversionCalculator.calculateArea = function(value, current, desired) {
+        return (parseFloat(value) * parseFloat(current)) / parseFloat(desired);
+    };
+
 }(window);
 (function($) {
 
@@ -1358,6 +1362,37 @@
       var value = ConversionCalculator.calculateVolume(total_input.val(), current_input.val(), desired_input.val());
       volume.text(value % 1 ? value.toFixed(3): value);
       volume_unit.text(desired_input.find(':selected').text());
+    }
+
+    form.on('submit', function() {
+      calculate();
+      return false;
+    });
+
+  });
+
+  // Area
+  $(function() {
+  
+    if ($('.area').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var total_input = $('#total-input');
+    var current_input = $('select[name=current]');
+    var desired_input = $('select[name=desired]');
+    var area = $('#area');
+    var area_unit = $('#area-unit');
+
+    function calculate() {
+      if (!isNumber(total_input.val())) {
+        return;
+      }
+
+      var value = ConversionCalculator.calculateArea(total_input.val(), current_input.val(), desired_input.val());
+      area.text(value % 1 ? value.toFixed(3): value);
+      area_unit.text(desired_input.find(':selected').text());
     }
 
     form.on('submit', function() {

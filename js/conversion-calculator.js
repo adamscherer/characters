@@ -20,4 +20,8 @@
         return (parseFloat(value) * parseFloat(current)) / parseFloat(desired);
     };
 
+    ConversionCalculator.calculateArea = function(value, current, desired) {
+        return (parseFloat(value) * parseFloat(current)) / parseFloat(desired);
+    };
+
 }(window);
