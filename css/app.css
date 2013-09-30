@@ -3649,6 +3649,13 @@ footer address {
 .demo-logo {
   margin: 5px 0;
   font-size: 65px;
+  line-height: 75px;
+}
+
+.demo-logo span {
+  display: block;
+  margin: 15px 0;
+  overflow: hidden;
 }
 
 .demo-headline {
@@ -3847,12 +3854,6 @@ textarea:focus {
 .medication .demo-logo {
   font-size: 45px;
   line-height: 50px;
-}
-
-.medication .demo-logo span {
-  display: block;
-  margin: 20px 0;
-  overflow: hidden;
 }
 
 .volume .demo-logo span {

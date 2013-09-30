@@ -352,7 +352,13 @@
     var amount_field = $('#amount');
 
     form.on('submit', function(e) {
-      amount_field.text('N/A');
+      var gender = $('input[name=gender]:checked').val();
+      var age = p_int(age_input.val());
+      var cholesterol = p_int(cholesterol_input.val());
+      var smoker = p_int($('input[name=smoker]:checked').val());
+      var hdl = p_int(hdl_input.val());
+      var systolic = p_int(systolic_input.val());
+      amount_field.text(HealthCalculator.calculateFraminghamRiskScore(gender, age, cholesterol, smoker, hdl, systolic));
       return false;
     });
 
