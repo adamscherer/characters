@@ -1524,4 +1524,32 @@
 
   });
 
+  // Text Creator
+  $(function() {
+  
+    if ($('.text-creator').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var search_input = $('#search-term');
+    var words = $('#words');
+
+    form.on('submit', function(e) {
+      $.ajax('https://www.googleapis.com/books/v1/volumes', {data: {'q': search_input.val()}, dataType: 'jsonp'}).done(function(response) {
+        var text = '';
+        for (var i = 0; i < response.items.length; i++) {
+          var item = response.items[i];
+          if (item.volumeInfo.description) {
+            text += '<p>' + item.volumeInfo.description + '</p>';
+          }
+        }
+        words.html(text);
+      });
+
+      return false;
+    });
+
+  });
+
 })(jQuery);

@@ -1,0 +1,33 @@
+---
+layout: default
+title: Sample Text Creator
+lead: "A tool that can be used to generate sample text for your website that can be more relevant than the standard Latin text."
+active: publish
+---
+
+<div class="main container text-creator">
+  <div class="row">
+    <div class="span9">
+      <h2 class="calculator-heading">{{page.title}}</h2>
+      <p>{{page.lead}}</p>
+      <div class="row-fluid">
+        <div class="span12">
+          <form action="#" method="post">
+            <div>
+              <input id="search-term"  type="text" value="" placeholder="Enter search word..." class="form-control">
+            </div>
+            <div class="button-box">
+              <input type="submit" class="btn btn-inverse btn-large btn-block" value="Generate" />
+            </div>
+          </form>
+          <div class="well result-box">
+            <span id="words"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span3">
+      {% include side-ads.html %}
+    </div>
+  </div>
+</div>
