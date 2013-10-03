@@ -483,7 +483,7 @@
     if ($('.http-headers').length === 0) {
       return;
     }
-
+ 
     var form = $('form');
     var search_input = $('#url');
     var output = $('#output');
