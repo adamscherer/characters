@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} - Umpteen Tools</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="{{ page.title }} - Umpteen Tools" />
     <meta charset="utf-8">
@@ -25,10 +25,10 @@
     <header class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container nav-collapse collapse navbar-responsive-collapse">
-          <a class="brand" href="index.html"> <img src="images/icons/tool-icon.png" title="Umpteen Tools Group"></a>
+          <a class="brand" href="index.html"><img src="images/umpteen-logo.png" title="Umpteen Tools Group"></a>
           <ul class="nav">
             <li class="dropdown {% if page.active == 'publish' %}active{% endif %}">
-              <a href="/" data-toggle="dropdown">Writing Tools</a>
+              <a href="/" data-toggle="dropdown">writing</a>
               <ul>
                 <li><a href="/characters">Character Counter</a></li>
                 <li><a href="/characters">Word Counter</a></li>
@@ -36,14 +36,14 @@
               </ul>
             </li>
             <li class="dropdown {% if page.active == 'finance' %}active{% endif %}">
-              <a href="/" data-toggle="dropdown">Finance Tools</a>
+              <a href="/" data-toggle="dropdown">finance</a>
               <ul>
                 <li><a href="/mortgage">Mortgage Calculator</a></li>
                 <!--<li><a href="/mortgage">Insurance Calculator</a></li>-->
               </ul>
             </li>
             <li class="dropdown {% if page.active == 'health' %}active{% endif %}">
-              <a href="/" data-toggle="dropdown">Health Tools</a>
+              <a href="/" data-toggle="dropdown">health</a>
               <ul>
                 <li><a href="/bmi">BMI Calculator</a></li>
                 <li><a href="/medication-dosage">Medication Dosages</a></li>
@@ -51,7 +51,7 @@
               </ul>
             </li>
             <li class="dropdown {% if page.active == 'conversion' %}active{% endif %}">
-              <a href="/" data-toggle="dropdown">Conversion Tools</a>
+              <a href="/" data-toggle="dropdown">conversion</a>
               <ul>
                 <li><a href="/temperature">Temperature Conversion</a></li>
                 <li><a href="/volume">Volume Conversion</a></li>

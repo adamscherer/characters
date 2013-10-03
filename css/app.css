@@ -3,7 +3,7 @@
 * Copyright 2013 ASE, Inc.
 * Licensed under http://www.apache.org/licenses/LICENSE-2.0
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,900,400italic,300");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,900,400italic,300|Merriweather:400");
 
 @font-face {
   font-family: 'Flat-UI-Icons';
@@ -873,9 +873,9 @@ h6 {
 }
 
 .navbar {
-  font-size: 15.988px;
-  /* 16px */
-
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
 }
 
 .navbar .brand {
@@ -941,7 +941,7 @@ h6 {
 
 .navbar .nav > li > a {
   padding: 29px 20px 27px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   color: #526476;
   text-shadow: none;
@@ -1142,7 +1142,9 @@ h6 {
 
 .navbar-inverse .nav > li > a {
   padding: 16px 20px 15px;
-  font-size: 16.002px;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+          font-smoothing: antialiased;
   color: white;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid #2c3e50;
@@ -3565,7 +3567,7 @@ header {
 }
 
 .navbar-inverse .brand {
-  padding: 5px 30px 5px 10px;
+  padding: 6px 70px 5px 10px;
   border: none;
 }
 

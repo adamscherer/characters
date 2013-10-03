@@ -1541,7 +1541,7 @@
         for (var i = 0; i < response.items.length; i++) {
           var item = response.items[i];
           if (item.volumeInfo.description) {
-            text += '<p>' + item.volumeInfo.description + '</p>';
+            text += '<h4>' + item.volumeInfo.title + '</h4><p>' + item.volumeInfo.description + '</p>';
           }
         }
         words.html(text);
