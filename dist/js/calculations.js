@@ -1552,4 +1552,28 @@
 
   });
 
+  // HTTP Headers
+  $(function() {
+  
+    if ($('.http-headers').length === 0) {
+      return;
+    }
+
+    var form = $('form');
+    var search_input = $('#url');
+    var output = $('#output');
+    form.on('submit', function(e) {
+      $.ajax('http://umpteentools.appspot.com', {data: {url: search_input.val()}}).done(function(response, status, xhr) {
+        if (response) {
+          output.html(response);
+        } else {
+          output.html('<strong>No headers were found.</strong>');
+        }
+      });
+
+      return false;
+    });
+
+  });
+
 })(jQuery);
