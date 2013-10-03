@@ -1576,4 +1576,27 @@
 
   });
 
+  // Who am I?
+  $(function() {
+  
+    if ($('.who-am-i').length === 0) {
+      return;
+    }
+
+    var output = $('#output');
+    var ip = $('#ip');
+    var coordinates = $('#coordinates');
+     
+    $.ajax('http://umpteentools.appspot.com/me', {}).done(function(response, status, xhr) {
+      if (response) {
+        output.html(response.city.toUpperCase() + ', ' + response.state.toUpperCase() + ' ' + response.country.toUpperCase());
+        ip.html(response.ip);
+        coordinates.html(response.coordinates);
+      } else {
+        output.html('<strong>No information was found.</strong>');
+      }
+    });
+
+  });
+
 })(jQuery);

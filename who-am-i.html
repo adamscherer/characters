@@ -1,0 +1,46 @@
+---
+layout: default
+title: What's my IP? City? Coordinates?
+lead: "A tool that can tell you where Google thinks you are."
+active: programming
+---
+
+<div class="main container who-am-i">
+  <div class="row">
+    <div class="span9">
+      <h2 class="calculator-heading">{{page.title}}</h2>
+      <p>{{page.lead}}</p>
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="well result-box">
+            <div class="demo-headline">
+              <h1 class="demo-logo">
+                <span id="output"></span>
+                <small>Location</small>
+              </h1>
+            </div>
+          </div>
+          <div class="well result-box">
+            <div class="demo-headline">
+              <h1 class="demo-logo">
+                <span id="ip"></span>
+                <small>IP</small>
+              </h1>
+            </div>
+          </div>
+          <div class="well result-box">
+            <div class="demo-headline">
+              <h1 class="demo-logo">
+                <span id="coordinates"></span>
+                <small>Coordinates</small>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span3">
+      {% include side-ads.html %}
+    </div>
+  </div>
+</div>
