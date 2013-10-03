@@ -6,6 +6,7 @@ import jinja2
 import os
 import json
 import logging
+import urlparse
 from decimal import Decimal
 from google.appengine.api import urlfetch
 
@@ -15,6 +16,14 @@ class MainPage(webapp2.RequestHandler):
 	def get(self):
 		self.response.headers.add_header("Access-Control-Allow-Origin", "*")
 		url = self.request.get('url')
+		if not url:
+			self.response.out.write("An error occurred while retrieving the headers")
+			return
+
+		parts = urlparse.urlsplit(url)
+		if not parts.scheme:
+			url = 'http://' + url
+
 		result = urlfetch.fetch(url)
 		if result.status_code == 200:
 			for e in result.headers:
