@@ -31,5 +31,16 @@ class MainPage(webapp2.RequestHandler):
 		else:
 			self.response.out.write("An error occurred while retrieving the headers")
 
-app = webapp2.WSGIApplication([('/', MainPage)],
+class GoogleHeadersPage(webapp2.RequestHandler):
+	def get(self):
+		self.response.headers.add_header("Access-Control-Allow-Origin", "*")
+		self.response.headers['Content-Type'] = 'application/json'
+
+		try:
+			my_response = {'ip': self.request.remote_addr, 'city': self.request.headers['X-Appengine-City'], 'state': self.request.headers['X-Appengine-Region'], 'country': self.request.headers['X-Appengine-Country'], 'coordinates': self.request.headers['X-Appengine-Citylatlong']}
+			self.response.out.write(json.dumps(my_response))
+		except:
+			self.response.out.write(json.dumps({'city': 'Naperville', 'state': 'IL'}))
+
+app = webapp2.WSGIApplication([('/headers', MainPage), ('/me', GoogleHeadersPage)],
                               debug=True)
