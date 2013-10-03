@@ -488,7 +488,7 @@
     var search_input = $('#url');
     var output = $('#output');
     form.on('submit', function(e) {
-      $.ajax('http://umpteentools.appspot.com', {data: {url: search_input.val()}}).done(function(response, status, xhr) {
+      $.ajax('http://umpteentools.appspot.com/headers', {data: {url: search_input.val()}}).done(function(response, status, xhr) {
         if (response) {
           output.html(response);
         } else {
