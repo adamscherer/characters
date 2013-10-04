@@ -3693,6 +3693,11 @@ textarea:focus {
   margin: 20px 0;
 }
 
+.message-government textarea {
+  width: 100%;
+  margin: 20px 0;
+}
+
 .adscontainer {
   margin-top: 70px;
 }

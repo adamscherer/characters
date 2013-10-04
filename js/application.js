@@ -524,4 +524,29 @@
 
   });
 
+  // Message My Government
+  $(function() {
+  
+    if ($('.message-government').length === 0) {
+      return;
+    }
+ 
+    var form = $('form');
+    var to = $('#to');
+    var message = $('#message');
+    var output = $('#output');
+    form.on('submit', function(e) {
+      $.ajax('http://umpteentools.appspot.com/call', {data: {to: to.val(), message: message.val()}}).done(function(response, status, xhr) {
+        if (response) {
+          output.html('<strong>Your message was sent!</strong>');
+        } else {
+          output.html('<strong>The message could not be sent.</strong>');
+        }
+      });
+
+      return false;
+    });
+
+  });
+
 })(jQuery);
