@@ -512,7 +512,7 @@
     var ip = $('#ip');
     var coordinates = $('#coordinates');
      
-    $.ajax('http://umpteentools.appspot.com/me', {}).done(function(response, status, xhr) {
+    $.ajax('http://umpteentools.appspot.com/me', {crossDomain: true}).done(function(response, status, xhr) {
       if (response) {
         output.html(response.city.toUpperCase() + ', ' + response.state.toUpperCase() + ' ' + response.country.toUpperCase());
         ip.html(response.ip);
@@ -522,7 +522,7 @@
       }
     });
 
-  });
+  }); 
 
   // Message My Government
   $(function() {
