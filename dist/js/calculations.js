@@ -1563,7 +1563,7 @@
     var search_input = $('#url');
     var output = $('#output');
     form.on('submit', function(e) {
-      $.ajax('http://umpteentools.appspot.com/headers', {crossDomain: true, data: {url: search_input.val()}}).done(function(response, status, xhr) {
+      $.ajax('http://umpteentools.appspot.com/headers', {dataType: 'html', crossDomain: true, data: {url: search_input.val()}}).done(function(response, status, xhr) {
         if (response) {
           output.html(response);
         } else {
@@ -1587,7 +1587,7 @@
     var ip = $('#ip');
     var coordinates = $('#coordinates');
      
-    $.ajax('http://umpteentools.appspot.com/me', {crossDomain: true}).done(function(response, status, xhr) {
+    $.ajax('http://umpteentools.appspot.com/me', {crossDomain: true, dataType: 'json'}).done(function(response, status, xhr) {
       if (response) {
         output.html(response.city.toUpperCase() + ', ' + response.state.toUpperCase() + ' ' + response.country.toUpperCase());
         ip.html(response.ip);
